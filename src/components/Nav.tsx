@@ -10,7 +10,7 @@ export default function Nav() {
     <nav className="fixed w-full top-0 left-0">
       <div className="container w-full flex justify-between items-center gap-6 py-6 max-sm:flex-col max-sm:gap-2">
         <Link
-          className="inline-block py-3 font-maragsa text-3xl leading-[1.625rem] text-white"
+          className="inline-block py-3 font-maragsa text-3xl leading-[1] text-white"
           href={"/"}
         >
           Allan Silva
