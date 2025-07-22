@@ -3,20 +3,56 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --gray-1: #e6e6e6;
+  --gray-2: #cccccc;
+  --gray-3: #b3b3b3;
+  --gray-4: #999999;
+  --gray-5: #808080;
+  --gray-6: #666666;
+  --gray-7: #4d4d4d;
+  --gray-8: #333333;
+  --gray-9: #1a1a1a;
 }
 
 @theme inline {
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-7: var(--gray-7);
+  --color-gray-8: var(--gray-8);
+  --color-gray-9: var(--gray-9);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-josefin: var(--font-josefin-sans);
   --font-humane: var(--font-humane);
   --font-maragsa: var(--font-maragsa);
+}
+
+@theme {
+  --color-c1: #ff0000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@layer components {
+  .link {
+    @apply absolute bottom-1.5 right-0 size-[70%] origin-bottom bg-white/30 group-hover:scale-y-12 transition-transform duration-300 ease-out;
   }
 }
 
