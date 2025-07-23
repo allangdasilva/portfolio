@@ -64,6 +64,15 @@
       max-[640px]:text-[12rem] 
       max-[400px]:text-[8.5rem];
   }
+  .title-set-height {
+    @apply h-[190px] 
+    max-[1280px]:h-[165px] 
+    max-[640px]:h-[142px] 
+    max-[400px]:h-[100px];
+  }
+  .title-span {
+    @apply block font-maragsa text-2xl text-white;
+  }
 
   .hero-pt {
     @apply pt-[182px] 

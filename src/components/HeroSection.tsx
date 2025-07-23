@@ -8,9 +8,7 @@ export default function HeroSection() {
       <div className="container flex justify-between max-lg:flex-col max-lg:gap-8">
         <div>
           <h1 className="title-gradient-responsive h-[432px] max-[1280px]:h-[388px] max-[1024px]:h-auto">
-            <span className="block font-maragsa text-2xl mb-4 text-white">
-              UI/UX Designer &
-            </span>
+            <span className="title-span mb-4">UI/UX Designer &</span>
             FRONT-END <br />
             DEVELOPER
           </h1>
@@ -19,7 +17,7 @@ export default function HeroSection() {
           <div className="flex gap-6">
             <div className="relative w-[98px] h-[41px]">
               <Image
-                src={"/svg/logo-white-eixo-x.svg"}
+                src={"/svg/logo-white-x.svg"}
                 fill
                 alt="Logo Allan Coding"
                 priority
