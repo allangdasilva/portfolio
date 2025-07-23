@@ -52,7 +52,23 @@
 
 @layer components {
   .link {
-    @apply absolute bottom-1.5 right-0 size-[70%] origin-bottom bg-white/30 group-hover:scale-y-12 transition-transform duration-300 ease-out;
+    @apply absolute bottom-1.5 right-0 size-[70%] origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10;
+  }
+
+  .title-gradient-responsive {
+    @apply bg-gradient-to-b from-white to-gray-1 
+      bg-clip-text text-transparent 
+      inline-block font-humane leading-[0.8]  
+      text-[16rem] 
+      max-[1280px]:text-[14rem] 
+      max-[640px]:text-[12rem] 
+      max-[400px]:text-[8.5rem];
+  }
+
+  .hero-pt {
+    @apply pt-[182px] 
+    max-[640px]:pt-[238px] 
+    max-[400px]:pt-[290px];
   }
 }
 
