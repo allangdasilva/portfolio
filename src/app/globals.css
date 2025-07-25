@@ -51,8 +51,11 @@
 }
 
 @layer components {
-  .link {
+  .link-decoration {
     @apply absolute bottom-1.5 right-0 size-[70%] origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10;
+  }
+  .link-style {
+    @apply relative inline-block py-3 pr-6 font-josefin text-xl text-gray-1   leading-6 tracking-[0.18em];
   }
 
   .title-gradient-responsive {
