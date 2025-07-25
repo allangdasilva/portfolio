@@ -19,7 +19,7 @@ export default function Nav() {
         <ul className="flex justify-between gap-6 max-[400px]:flex-col max-[400px]:items-center max-[400px]:gap-1">
           {copy.map(({ key, id, name }) => (
             <li key={key}>
-              <a className="link-style group" href={`#${id}`}>
+              <a className="link-style text-spacing group" href={`#${id}`}>
                 {name}
                 <span className="link-decoration"></span>
               </a>

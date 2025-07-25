@@ -8,7 +8,7 @@ export default function WorksSection() {
     <section className="flex flex-col gap-20 container py-[180px]">
       <div>
         <h2 className="inline-block">
-          <span className="title-gradient-responsive title-set-height leading-[0.9] ">
+          <span className="title-responsive title-gradient title-set-height leading-[0.9] ">
             TRABALHOS
           </span>
           <br />
@@ -27,7 +27,7 @@ export default function WorksSection() {
               key={key}
             >
               <div className="w-full max-w-fit">
-                <h2 className="inline-block font-humane text-[6rem] leading-[0.85] bg-gradient-to-b from-white to-gray-1 bg-clip-text text-transparent max-[640px]:text-[4rem]">
+                <h2 className="inline-block font-humane text-[6rem] leading-[0.85] title-gradient max-[640px]:text-[4rem]">
                   {project}
                 </h2>
                 <p className="font-maragsa leading-[1] -translate-y-2 text-white max-[640px]:translate-y-0">
@@ -41,11 +41,11 @@ export default function WorksSection() {
         </ul>
       </div>
       <div className="flex gap-6 flex-wrap">
-        <a className="link-style group" href={``}>
+        <a className="link-style text-spacing group" href={``}>
           ver mais
           <span className="link-decoration"></span>
         </a>
-        <a className="link-style group" href={``}>
+        <a className="link-style text-spacing group" href={``}>
           currículo
           <span className="link-decoration"></span>
         </a>

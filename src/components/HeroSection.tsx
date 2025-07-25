@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section className="w-full hero-pt pb-[180px] flex bg-[url(/images/hero-bg.avif)] bg-center bg-cover bg-no-repeat ">
       <div className="container flex justify-between max-lg:flex-col max-lg:gap-8">
         <div>
-          <h1 className="title-gradient-responsive h-[432px] max-[1280px]:h-[388px] max-[1024px]:h-auto">
+          <h1 className="title-responsive title-gradient h-[432px] max-[1280px]:h-[388px] max-[1024px]:h-auto">
             <span className="title-span mb-4">UI/UX Designer &</span>
             FRONT-END <br />
             DEVELOPER
