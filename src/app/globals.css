@@ -77,8 +77,12 @@
   .title-span {
     @apply block font-maragsa text-2xl text-white;
   }
-  .title-gradient {
+  .title-gradient-white {
     @apply bg-gradient-to-b from-white to-gray-1 
+      bg-clip-text text-transparent;
+  }
+  .title-gradient-black {
+    @apply bg-gradient-to-b from-black to-gray-9 
       bg-clip-text text-transparent;
   }
   .hero-pt {

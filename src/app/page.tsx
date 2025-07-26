@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Nav from "@/components/Nav";
 import SkillsSection from "@/components/SkillsSections";
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <WorksSection />
       <SkillsSection />
+      <Footer />
     </>
   );
 }

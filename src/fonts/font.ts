@@ -10,7 +10,7 @@ export const josefinSans = Josefin_Sans({
 });
 
 export const humane = localFont({
-  src: "../../local-fonts/Humane-Medium.ttf",
+  src: "../../local-fonts/Humane-Regular.ttf",
   weight: "variable",
   style: "normal",
   display: "swap",
