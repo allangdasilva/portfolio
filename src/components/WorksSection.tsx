@@ -5,7 +5,10 @@ import { worksCopy } from "@/copy/Works";
 export default function WorksSection() {
   const copy = worksCopy;
   return (
-    <section className="flex flex-col gap-20 container py-[180px]">
+    <section
+      id="works"
+      className="flex flex-col gap-20 container py-[180px] bg-gray-10"
+    >
       <div>
         <h2 className="inline-block">
           <span className="title-responsive title-gradient-white title-set-height leading-[0.9] ">
