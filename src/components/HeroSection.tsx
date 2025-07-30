@@ -4,7 +4,10 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full hero-pt pb-[180px] flex bg-[url(/images/hero-bg.webp)] bg-center bg-cover bg-no-repeat bg-gray-10">
+    <section
+      id="hero"
+      className="relative w-full hero-pt pb-[180px] flex bg-[url(/images/hero-bg.webp)] bg-center bg-cover bg-no-repeat bg-gray-10"
+    >
       <div className="container flex justify-between max-lg:flex-col max-lg:gap-8">
         <div>
           <h1 className="title-responsive title-gradient-white h-[432px] max-[1280px]:h-[388px] max-[1024px]:h-auto">

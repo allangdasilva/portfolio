@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   const copy = socialCopy;
+
   return (
     <footer id="contact" className="bg-gray-10">
       <div className="container py-6">

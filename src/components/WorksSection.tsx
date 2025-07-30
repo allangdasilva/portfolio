@@ -4,6 +4,7 @@ import { worksCopy } from "@/copy/Works";
 
 export default function WorksSection() {
   const copy = worksCopy;
+
   return (
     <section
       id="works"

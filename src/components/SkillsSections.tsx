@@ -4,7 +4,10 @@ import Image from "next/image";
 
 export default function SkillsSection() {
   return (
-    <section className="container pt-[24px] pb-[180px] flex flex-col items-center gap-20 bg-gray-10">
+    <section
+      id="skills"
+      className="container pt-[24px] pb-[180px] flex flex-col items-center gap-20 bg-gray-10"
+    >
       <h2 className="text-center uppercase font-humane text-[11rem] leading-[0.88] title-gradient-white max-[640px]:text-[6.8rem] max-[400px]:text-[6rem]">
         Eu Construo Sites
         <br />
