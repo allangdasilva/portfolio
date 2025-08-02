@@ -53,7 +53,8 @@
 
 @layer components {
   .main_title {
-    @apply font-krisha text-9xl tracking-[0.02em] leading-[0.85];
+    @apply font-krisha text-9xl tracking-[0.02em] leading-[0.85] 
+    max-lg:text-8xl max-sm:text-7xl;
   }
   .works_title {
     @apply font-krisha text-6xl tracking-[0.02em] leading-[0.95];
@@ -81,6 +82,7 @@
   }
   /* ----- LINK ----- */
 
+  /* ----- GRADIENT ----- */
   .title-gradient-white {
     @apply bg-gradient-to-b from-white to-gray-1 
       bg-clip-text text-transparent;
@@ -89,6 +91,13 @@
     @apply bg-gradient-to-b from-black to-gray-9 
       bg-clip-text text-transparent;
   }
+  /* ----- GRADIENT ----- */
+
+  /* ----- GSAP ----- */
+  .gsap-init {
+    @apply opacity-0 pointer-events-none;
+  }
+  /* ----- GSAP ----- */
 }
 
 body {
