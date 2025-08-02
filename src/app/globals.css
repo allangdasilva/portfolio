@@ -35,13 +35,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-josefin: var(--font-josefin-sans);
-  --font-humane: var(--font-humane);
-  --font-maragsa: var(--font-maragsa);
-}
-
-@theme {
-  --color-c1: #ff0000;
+  --font-dm-sans: var(--font-dm-sans);
+  --font-krisha: var(--font-krisha);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,32 +52,35 @@
 }
 
 @layer components {
-  .link-decoration {
-    @apply absolute bottom-1.5 right-0 size-[70%] origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10;
+  .main_title {
+    @apply font-krisha text-9xl tracking-[0.02em] leading-[0.85];
   }
-  .text-spacing {
-    @apply font-josefin text-xl text-gray-1 leading-6 tracking-[0.18em];
+  .works_title {
+    @apply font-krisha text-6xl tracking-[0.02em] leading-[0.95];
   }
-  .link-style {
-    @apply relative inline-block py-3 pr-6;
+  .works_subtitle {
+    @apply font-krisha text-3xl tracking-[0.02em] leading-[1];
+  }
+  .paragraph {
+    @apply font-dm-sans font-medium text-base leading-[1.25];
   }
 
-  .title-responsive {
-    @apply inline-block font-humane leading-[0.8]  
-      text-[16rem] 
-      max-[1280px]:text-[14rem] 
-      max-[640px]:text-[12rem] 
-      max-[400px]:text-[8.5rem];
+  .footer_copy_info {
+    @apply font-dm-sans font-extralight text-base leading-[1.25];
   }
-  .title-set-height {
-    @apply h-[190px] 
-    max-[1280px]:h-[165px] 
-    max-[640px]:h-[142px] 
-    max-[400px]:h-[100px];
+
+  /* ----- LINK ----- */
+  .link_text {
+    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-[1.25];
   }
-  .title-span {
-    @apply block font-maragsa text-2xl text-white;
+  .link_style {
+    @apply relative inline-block py-3 pr-6 text-gray-1;
   }
+  .link_decoration {
+    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10;
+  }
+  /* ----- LINK ----- */
+
   .title-gradient-white {
     @apply bg-gradient-to-b from-white to-gray-1 
       bg-clip-text text-transparent;
@@ -90,11 +88,6 @@
   .title-gradient-black {
     @apply bg-gradient-to-b from-black to-gray-9 
       bg-clip-text text-transparent;
-  }
-  .hero-pt {
-    @apply pt-[182px] 
-    max-[640px]:pt-[238px] 
-    max-[400px]:pt-[290px];
   }
 }
 

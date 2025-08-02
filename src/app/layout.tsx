@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { josefinSans, humane, maragsa } from "@/fonts/font";
+import { krisha, dmSans } from "@/fonts/font";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,9 +16,8 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body
         className={`
-          ${humane.variable}
-          ${josefinSans.variable}
-          ${maragsa.variable}
+          ${krisha.variable}
+          ${dmSans.variable}
           antialiased`}
       >
         {children}

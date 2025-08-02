@@ -1,26 +1,18 @@
-import { Josefin_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
-export const josefinSans = Josefin_Sans({
-  weight: ["400", "300"],
+export const dmSans = DM_Sans({
+  weight: ["200", "500"],
   style: "normal",
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-josefin-sans",
+  variable: "--font-dm-sans",
 });
 
-export const humane = localFont({
-  src: "../../local-fonts/Humane-Regular.ttf",
+export const krisha = localFont({
+  src: "../../local-fonts/Krisha-Regular.otf",
   weight: "variable",
   style: "normal",
   display: "swap",
-  variable: "--font-humane",
-});
-
-export const maragsa = localFont({
-  src: "../../local-fonts/Maragsâ-Display.otf",
-  weight: "variable",
-  style: "normal",
-  display: "swap",
-  variable: "--font-maragsa",
+  variable: "--font-krisha",
 });

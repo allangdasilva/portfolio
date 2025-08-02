@@ -12,11 +12,9 @@ export default function WorksSection() {
     >
       <div>
         <h2 className="inline-block">
-          <span className="title-responsive title-gradient-white title-set-height leading-[0.9] ">
-            TRABALHOS
-          </span>
+          <span className="title-gradient-white">TRABALHOS</span>
           <br />
-          <span className="title-span mt-1 text-end">Selecionados</span>
+          <span className="text-end">Selecionados</span>
         </h2>
       </div>
       <div>
@@ -31,12 +29,8 @@ export default function WorksSection() {
               key={key}
             >
               <div className="w-full max-w-fit">
-                <h2 className="inline-block font-humane text-[6rem] leading-[0.85] title-gradient-white max-[640px]:text-[4rem]">
-                  {project}
-                </h2>
-                <p className="font-maragsa leading-[1] -translate-y-2 text-white max-[640px]:translate-y-0">
-                  {description}
-                </p>
+                <h2 className="inline-block title-gradient-white">{project}</h2>
+                <p className="text-white">{description}</p>
               </div>
 
               <div className="w-full h-72 bg-gray-2"></div>
@@ -45,11 +39,11 @@ export default function WorksSection() {
         </ul>
       </div>
       <div className="flex gap-6 flex-wrap">
-        <a className="link-style text-spacing group" href={``}>
+        <a className="group" href={``}>
           ver mais
           <span className="link-decoration"></span>
         </a>
-        <a className="link-style text-spacing group" href={``}>
+        <a className="group" href={``}>
           currículo
           <span className="link-decoration"></span>
         </a>
