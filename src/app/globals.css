@@ -51,53 +51,56 @@
   padding-inline: 1.5rem;
 }
 
-@layer components {
+@layer utilities {
+  /* ----- TYPOGRAPHY ----- */
   .main_title {
     @apply font-krisha text-9xl tracking-[0.02em] leading-[0.85] 
     max-lg:text-8xl max-sm:text-7xl;
   }
   .works_title {
-    @apply font-krisha text-6xl tracking-[0.02em] leading-[0.95];
+    @apply font-krisha text-6xl tracking-[0.02em] leading-[0.95]
+    max-lg:text-5xl max-sm:text-4xl;
   }
   .works_subtitle {
-    @apply font-krisha text-3xl tracking-[0.02em] leading-[1];
+    @apply font-krisha text-3xl tracking-[0.02em] leading-[1]
+    max-lg:text-2xl max-sm:text-xl;
   }
   .paragraph {
     @apply font-dm-sans font-medium text-base leading-[1.25];
   }
-
   .footer_copy_info {
     @apply font-dm-sans font-extralight text-base leading-[1.25];
   }
+  /* ----- END-TYPOGRAPHY ----- */
 
   /* ----- LINK ----- */
   .link_text {
     @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-[1.25];
   }
   .link_style {
-    @apply relative inline-block py-3 pr-6 text-gray-1;
+    @apply relative inline-block py-3 pr-6 text-gray-1 z-10;
   }
   .link_decoration {
     @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10;
   }
-  /* ----- LINK ----- */
+  /* ----- END-LINK ----- */
 
   /* ----- GRADIENT ----- */
-  .title-gradient-white {
+  .title_gradient_white {
     @apply bg-gradient-to-b from-white to-gray-1 
       bg-clip-text text-transparent;
   }
-  .title-gradient-black {
-    @apply bg-gradient-to-b from-black to-gray-9 
+  .title_gradient_black {
+    @apply bg-gradient-to-b from-gray-10 to-gray-9 
       bg-clip-text text-transparent;
   }
-  /* ----- GRADIENT ----- */
+  /* ----- END-GRADIENT ----- */
 
   /* ----- GSAP ----- */
   .gsap-init {
     @apply opacity-0 pointer-events-none;
   }
-  /* ----- GSAP ----- */
+  /* ----- END-GSAP ----- */
 }
 
 body {

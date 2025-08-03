@@ -25,26 +25,27 @@ export default function HeroSection() {
         charsClass: "char",
       });
       titleSplit.chars.forEach((char) => {
-        char.classList.add(
-          "title-gradient-white",
-          "whitespace-nowrap",
-          "inline-block"
-        );
+        char.classList.add("title_gradient_white");
       });
       gsap.from(titleSplit.chars, {
-        yPercent: 100,
+        xPercent: -100,
         duration: 0.8,
-        ease: "back.out",
+        ease: "expo.out",
         stagger: 0.06,
         opacity: 0,
       });
-      gsap.from(descRef.current, {
-        scale: 0.8,
-        opacity: 0,
-        duration: 1,
-        delay: 2.2,
-        ease: "expo.out",
-      });
+      gsap.fromTo(
+        descRef.current,
+        {
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
+        },
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          duration: 1,
+          delay: 2.2,
+          ease: "expo.out",
+        }
+      );
     },
     { scope: heroRef }
   );
@@ -63,15 +64,13 @@ export default function HeroSection() {
             [&_.char]:inline-block"
             suppressHydrationWarning
           >
-            <span className="block max-sm:inline-block max-sm:pr-3.5">
-              FRONT-END DEVELOPER &
-            </span>
-            <span>UI/UX DESIGNER</span>
+            FRONT-END DEVELOPER & <br className="max-sm:hidden" /> UI/UX
+            DESIGNER
           </h1>
         </div>
 
         <div
-          className="flex flex-col items-center gap-6 gsap-init"
+          className="flex flex-col items-center gap-6 gsap-init clip-path"
           ref={descRef}
         >
           <div className="flex gap-6">
