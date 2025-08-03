@@ -19,10 +19,17 @@ export default function HeroSection() {
       });
 
       const titleSplit = new SplitText(titleRef.current, {
-        type: "chars, word",
+        type: "chars, words",
+        tag: "span",
+        wordsClass: "word",
+        charsClass: "char",
       });
       titleSplit.chars.forEach((char) => {
-        char.classList.add("title-gradient-white");
+        char.classList.add(
+          "title-gradient-white",
+          "whitespace-nowrap",
+          "inline-block"
+        );
       });
       gsap.from(titleSplit.chars, {
         yPercent: 100,
@@ -52,13 +59,14 @@ export default function HeroSection() {
         <div className="pb-20 pt-15">
           <h1
             ref={titleRef}
-            className="main_title text-center gsap-init *:inline-block *:max-[600px]:inline"
+            className="main_title text-center gsap-init [&_.word]:whitespace-nowrap 
+            [&_.char]:inline-block"
             suppressHydrationWarning
           >
-            <span className="overflow-hidden max-[600px]:pr-3.5">
+            <span className="block max-sm:inline-block max-sm:pr-3.5">
               FRONT-END DEVELOPER &
             </span>
-            <span className="overflow-hidden">UI/UX DESIGNER</span>
+            <span>UI/UX DESIGNER</span>
           </h1>
         </div>
 
