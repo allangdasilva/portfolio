@@ -59,7 +59,7 @@ export default function SkillsSection() {
     <section
       ref={skillsRef}
       id="skills"
-      className=" py-20 bg-gray-10 overflow-hidden"
+      className=" py-40 bg-gray-10 overflow-hidden"
     >
       <div className="container flex flex-col items-center gap-15">
         <h2

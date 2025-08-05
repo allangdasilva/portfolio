@@ -1,14 +1,109 @@
+"use client";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import React from "react";
+gsap.registerPlugin(useGSAP);
+
 export default function StrategyIcon() {
+  const svgRef = React.useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".circle_01_path",
+        {
+          scale: 0.4,
+        },
+        {
+          scale: 1,
+          duration: 2.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "power4.out",
+        }
+      );
+      gsap.fromTo(
+        ".circle_02_path",
+        {
+          strokeDasharray: 74,
+          strokeDashoffset: 74,
+        },
+        {
+          strokeDashoffset: 0,
+          duration: 2.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "power4.out",
+        }
+      );
+      gsap.fromTo(
+        ".circle_03_path",
+        {
+          strokeDasharray: 108,
+          strokeDashoffset: 108,
+        },
+        {
+          strokeDashoffset: 0,
+          duration: 2.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "power4.out",
+        }
+      );
+      gsap.fromTo(
+        ".lines_path",
+        {
+          strokeDasharray: 16,
+          strokeDashoffset: 16,
+        },
+        {
+          rotate: 0,
+          strokeDashoffset: 0,
+          duration: 2.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "power4.out",
+        }
+      );
+      gsap.from(svgRef.current, {
+        opacity: 0,
+        filter: "blur(1px)",
+        duration: 2.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power4.out",
+      });
+    },
+    { scope: svgRef }
+  );
+
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="none">
-      <path
-        fill="#fff"
-        d="M42 20.114h-2.731A18.304 18.304 0 0 0 21.886 2.73V0h-1.772v2.731A18.305 18.305 0 0 0 2.73 20.114H0v1.772h2.731A18.305 18.305 0 0 0 20.114 39.27V42h1.772v-2.731A18.304 18.304 0 0 0 39.27 21.886H42v-1.772Zm-4.504 0h-5.413A11.132 11.132 0 0 0 21.888 9.919V4.504a16.536 16.536 0 0 1 15.608 15.61Zm-7.186 1.772a9.373 9.373 0 0 1-8.424 8.424v-4.066h-1.772v4.066a9.373 9.373 0 0 1-8.424-8.424h4.066v-1.772H11.69a9.373 9.373 0 0 1 8.424-8.424v4.066h1.772V11.69a9.373 9.373 0 0 1 8.424 8.424h-4.066v1.772h4.066ZM20.115 4.504v5.413A11.132 11.132 0 0 0 9.92 20.112H4.504A16.536 16.536 0 0 1 20.115 4.504ZM4.504 21.886h5.413a11.132 11.132 0 0 0 10.195 10.195v5.413A16.536 16.536 0 0 1 4.504 21.887Zm17.382 15.61v-5.413a11.132 11.132 0 0 0 10.195-10.195h5.413a16.536 16.536 0 0 1-15.608 15.608Z"
-      />
-      <path
-        fill="#fff"
-        d="M21 23.652a2.652 2.652 0 1 0 0-5.304 2.652 2.652 0 0 0 0 5.304Z"
-      />
+    <svg
+      ref={svgRef}
+      xmlns="http://www.w3.org/2000/svg"
+      width="42"
+      height="42"
+      fill="none"
+    >
+      <g stroke="#fff" strokeWidth="2">
+        <circle
+          className="circle_02_path"
+          cx="21"
+          cy="21"
+          r="10"
+          transform="rotate(-90 21 21)"
+        />
+        <circle className="circle_01_path" cx="21" cy="21" r="1" />
+        <circle
+          className="circle_03_path"
+          cx="17"
+          cy="17"
+          r="17"
+          transform="matrix(0 -1 -1 0 38 38)"
+        />
+        <path className="lines_path" d="M0 21h8M42 21h-8M21 42v-8M21 0v8" />
+      </g>
     </svg>
   );
 }

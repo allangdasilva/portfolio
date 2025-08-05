@@ -14,8 +14,8 @@ export default function HeroSection() {
 
   useGSAP(
     () => {
-      document.querySelectorAll(".gsap-init").forEach((el) => {
-        el.classList.remove("gsap-init");
+      document.querySelectorAll(".gsap_init").forEach((el) => {
+        el.classList.remove("gsap_init");
       });
 
       const titleSplit = new SplitText(titleRef.current, {
@@ -60,7 +60,7 @@ export default function HeroSection() {
         <div className="pb-20 pt-15">
           <h1
             ref={titleRef}
-            className="main_title text-center gsap-init [&_.word]:whitespace-nowrap 
+            className="main_title text-center gsap_init [&_.word]:whitespace-nowrap 
             [&_.char]:inline-block"
             suppressHydrationWarning
           >
@@ -70,7 +70,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="flex flex-col items-center gap-6 gsap-init clip-path"
+          className="flex flex-col items-center gap-6 gsap_init clip-path"
           ref={descRef}
         >
           <div className="flex gap-6">

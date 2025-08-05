@@ -98,10 +98,34 @@
   /* ----- END-GRADIENT ----- */
 
   /* ----- GSAP ----- */
-  .gsap-init {
+  .gsap_init {
     @apply opacity-0 pointer-events-none;
   }
   /* ----- END-GSAP ----- */
+
+  /* ----- SVG-ANIMATION ----- */
+  .pointer_path {
+    transform: rotate(-180deg);
+    transform-origin: center;
+    animation: pointer_anim 2.5s linear alternate infinite;
+  }
+  @keyframes pointer_anim {
+    0% {
+      opacity: 0;
+      transform: rotate(00deg);
+    }
+    20% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+      transform: rotate(255deg);
+    }
+    100% {
+      transform: rotate(260deg);
+    }
+  }
+  /* ----- END-SVG-ANIMATION ----- */
 }
 
 body {

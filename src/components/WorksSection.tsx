@@ -16,8 +16,8 @@ export default function WorksSection() {
 
   useGSAP(
     () => {
-      document.querySelectorAll(".gsap-init").forEach((el) => {
-        el.classList.remove("gsap-init");
+      document.querySelectorAll(".gsap_init").forEach((el) => {
+        el.classList.remove("gsap_init");
       });
 
       const titleSplit = new SplitText(titleRef.current, {
@@ -85,7 +85,7 @@ export default function WorksSection() {
           <h2
             ref={titleRef}
             className="main_title [&_.word]:whitespace-nowrap 
-            [&_.char]:inline-block gsap-init"
+            [&_.char]:inline-block gsap_init"
           >
             TRABALHOS <br /> SELECIONADOS
           </h2>
@@ -101,7 +101,7 @@ export default function WorksSection() {
                   index % 2 === 0
                     ? "max-[640px]:items-end max-[640px]:text-end"
                     : "flex-row-reverse max-[640px]:items-start"
-                } max-[640px]:flex-col max-[640px]:gap-4 gsap-init`}
+                } max-[640px]:flex-col max-[640px]:gap-4 gsap_init`}
                 key={key}
               >
                 <div className="w-full max-w-fit">
@@ -123,7 +123,7 @@ export default function WorksSection() {
           </ul>
         </div>
         <div className="overflow-hidden">
-          <div className="flex gap-6 flex-wrap gsap-init" ref={linksRef}>
+          <div className="flex gap-6 flex-wrap gsap_init" ref={linksRef}>
             <a className="link_text link_style group" href={``}>
               ver mais
               <span className="link_decoration"></span>
