@@ -75,7 +75,8 @@
 
   /* ----- LINK ----- */
   .link_text {
-    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-[1.25];
+    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-[1.25]
+    max-sm:text-sm;
   }
   .link_style {
     @apply relative inline-block py-3 pr-6 text-gray-1 z-10;

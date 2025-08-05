@@ -28,7 +28,7 @@ export default function HeroSection() {
         char.classList.add("title_gradient_white");
       });
       gsap.from(titleSplit.chars, {
-        xPercent: -100,
+        xPercent: 100,
         duration: 0.8,
         ease: "expo.out",
         stagger: 0.06,
@@ -54,7 +54,7 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       className="relative w-full pt-[100px] pb-20 flex bg-gray-10 
-      max-[640px]:pt-38 max-[400px]:pt-50"
+      max-[640px]:pt-[149.5px] max-[400px]:pt-[195px]"
     >
       <div className="container flex flex-col items-center">
         <div className="pb-20 pt-15">
