@@ -142,6 +142,9 @@
   /* ----- END-MODAL-INFO-ANIMATION ----- */
 }
 
+html {
+  scroll-behavior: auto !important;
+}
 body {
   background: var(--gray-10);
   color: var(--foreground);
