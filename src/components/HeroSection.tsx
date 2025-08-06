@@ -60,8 +60,8 @@ export default function HeroSection() {
         <div className="pb-20 pt-15">
           <h1
             ref={titleRef}
-            className="main_title text-center gsap_init [&_.word]:whitespace-nowrap 
-            [&_.char]:inline-block"
+            className="main_title text-center [&_.word]:whitespace-nowrap 
+            [&_.char]:inline-block gsap_init will-change-transform"
             suppressHydrationWarning
           >
             FRONT-END DEVELOPER & <br className="max-sm:hidden" /> UI/UX
@@ -70,7 +70,8 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="flex flex-col items-center gap-6 gsap_init clip-path"
+          className="flex flex-col items-center gap-6 gsap_init clip-path 
+          will-change-auto"
           ref={descRef}
         >
           <div className="flex gap-6">

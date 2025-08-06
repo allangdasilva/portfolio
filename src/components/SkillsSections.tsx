@@ -17,6 +17,10 @@ export default function SkillsSection() {
 
   useGSAP(
     () => {
+      document.querySelectorAll(".gsap_init").forEach((el) => {
+        el.classList.remove("gsap_init");
+      });
+
       const titleSplit = new SplitText(titleRef.current, {
         type: "chars, words",
         tag: "span",
@@ -64,8 +68,8 @@ export default function SkillsSection() {
       <div className="container flex flex-col items-center gap-15">
         <h2
           ref={titleRef}
-          className="main_title text-center overflow-visible  
-          [&_.word]:whitespace-nowrap [&_.char]:inline-block"
+          className="main_title text-center overflow-visible gsap_init  
+          [&_.word]:whitespace-nowrap [&_.char]:inline-block will-change-transform"
         >
           EU CONSTRUO SITES
           <br />
@@ -75,17 +79,22 @@ export default function SkillsSection() {
           ref={skillsContentRef}
           className="flex flex-wrap items-end justify-center gap-y-7.5 gap-x-32"
         >
-          {copy.map(({ key, name, svg: Svg }, index) => (
+          {copy.map((skill, index) => (
             <div
               ref={(el) => {
                 if (el) skillsListRef.current[index] = el;
               }}
-              key={key}
+              key={skill.key}
               className={`flex flex-col items-center gap-2 text-white
-            ${index === 0 ? "basis-full" : ""}`}
+            ${index === 0 ? "basis-full" : ""} gsap_init will-change-transform`}
             >
-              <Svg aria-hidden="true" />
-              <p className="link_text">{name}</p>
+              <Image
+                src={skill.image.src}
+                alt={skill.image.alt}
+                width={skill.image.width}
+                height={skill.image.height}
+              />
+              <p className="link_text">{skill.name}</p>
             </div>
           ))}
         </div>

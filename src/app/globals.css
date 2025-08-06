@@ -82,7 +82,7 @@
     @apply relative inline-block py-3 pr-6 text-gray-1 z-10;
   }
   .link_decoration {
-    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10;
+    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10 will-change-transform;
   }
   /* ----- END-LINK ----- */
 
@@ -105,7 +105,6 @@
 
   /* ----- SVG-ANIMATION ----- */
   .pointer_path {
-    transform: rotate(-180deg);
     transform-origin: center;
     animation: pointer_anim 2.5s linear alternate infinite;
   }
@@ -126,6 +125,21 @@
     }
   }
   /* ----- END-SVG-ANIMATION ----- */
+
+  /* ----- MODAL-INFO-ANIMATION ----- */
+  .infos_in {
+    will-change: transform;
+    animation: infos_anim 0.4s linear;
+  }
+  @keyframes infos_anim {
+    from {
+      transform: translateX(calc(100% + 24px));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  /* ----- END-MODAL-INFO-ANIMATION ----- */
 }
 
 body {

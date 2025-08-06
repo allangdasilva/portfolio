@@ -4,7 +4,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Allan | Desenvolvedor Front-End & UI/UX Designer",
-  description: "Criado por Allan Silva",
+  description:
+    "Portfólio Desenvolvedor Front-End & UI/UX Designer, projetado e criado por Allan Silva",
 };
 
 export default function RootLayout({

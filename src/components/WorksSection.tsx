@@ -85,7 +85,7 @@ export default function WorksSection() {
           <h2
             ref={titleRef}
             className="main_title [&_.word]:whitespace-nowrap 
-            [&_.char]:inline-block gsap_init"
+            [&_.char]:inline-block gsap_init will-change-transform"
           >
             TRABALHOS <br /> SELECIONADOS
           </h2>
@@ -101,7 +101,7 @@ export default function WorksSection() {
                   index % 2 === 0
                     ? "max-[640px]:items-end max-[640px]:text-end"
                     : "flex-row-reverse max-[640px]:items-start"
-                } max-[640px]:flex-col max-[640px]:gap-4 gsap_init`}
+                } max-[640px]:flex-col max-[640px]:gap-4 gsap_init will-change-transform`}
                 key={key}
               >
                 <div className="w-full max-w-fit">
@@ -123,7 +123,10 @@ export default function WorksSection() {
           </ul>
         </div>
         <div className="overflow-hidden">
-          <div className="flex gap-6 flex-wrap gsap_init" ref={linksRef}>
+          <div
+            className="flex gap-6 flex-wrap gsap_init will-change-transform"
+            ref={linksRef}
+          >
             <a className="link_text link_style group" href={``}>
               ver mais
               <span className="link_decoration"></span>
