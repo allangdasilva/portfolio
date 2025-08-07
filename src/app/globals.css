@@ -97,34 +97,14 @@
   }
   /* ----- END-GRADIENT ----- */
 
-  /* ----- GSAP ----- */
+  /* ----- GSAP/CLIP-PATH ----- */
   .gsap_init {
     @apply opacity-0 pointer-events-none;
   }
-  /* ----- END-GSAP ----- */
-
-  /* ----- SVG-ANIMATION ----- */
-  .pointer_path {
-    transform-origin: center;
-    animation: pointer_anim 2.5s linear alternate infinite;
+  .clip_desc {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
-  @keyframes pointer_anim {
-    0% {
-      opacity: 0;
-      transform: rotate(00deg);
-    }
-    20% {
-      opacity: 0;
-    }
-    60% {
-      opacity: 1;
-      transform: rotate(255deg);
-    }
-    100% {
-      transform: rotate(260deg);
-    }
-  }
-  /* ----- END-SVG-ANIMATION ----- */
+  /* ----- END-GSAP/CLIP-PATH ----- */
 
   /* ----- MODAL-INFO-ANIMATION ----- */
   .infos_in {
@@ -144,6 +124,7 @@
 
 html {
   scroll-behavior: auto !important;
+  /* scrollbar-width: none; */
 }
 body {
   background: var(--gray-10);

@@ -1,51 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import { useGSAP } from "@gsap/react";
 import React from "react";
-gsap.registerPlugin(SplitText, useGSAP);
+import { useGSAP } from "@/lib/gsap";
+import { heroAnimation } from "@/animations/heroAnimation";
+import { removeGsapInit } from "@/helper/removeGsapInit";
 
 export default function HeroSection() {
-  const heroRef = React.useRef(null);
-  const titleRef = React.useRef(null);
-  const descRef = React.useRef(null);
+  const heroRef = React.useRef<HTMLElement>(null);
+  const titleRef = React.useRef<HTMLHeadingElement>(null);
+  const descRef = React.useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      document.querySelectorAll(".gsap_init").forEach((el) => {
-        el.classList.remove("gsap_init");
-      });
+      removeGsapInit(heroRef);
 
-      const titleSplit = new SplitText(titleRef.current, {
-        type: "chars, words",
-        tag: "span",
-        wordsClass: "word",
-        charsClass: "char",
+      if (!titleRef.current || !descRef.current) return;
+
+      heroAnimation({
+        titleElement: titleRef.current,
+        descElement: descRef.current,
       });
-      titleSplit.chars.forEach((char) => {
-        char.classList.add("title_gradient_white");
-      });
-      gsap.from(titleSplit.chars, {
-        xPercent: 100,
-        duration: 0.8,
-        ease: "expo.out",
-        stagger: 0.06,
-        opacity: 0,
-      });
-      gsap.fromTo(
-        descRef.current,
-        {
-          clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
-        },
-        {
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          duration: 1,
-          delay: 2.2,
-          ease: "expo.out",
-        }
-      );
     },
     { scope: heroRef }
   );
@@ -71,7 +46,7 @@ export default function HeroSection() {
 
         <div
           className="flex flex-col items-center gap-6 gsap_init clip-path 
-          will-change-auto"
+          will-change-auto clip_desc"
           ref={descRef}
         >
           <div className="flex gap-6">

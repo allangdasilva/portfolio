@@ -2,59 +2,33 @@
 
 import Image from "next/image";
 import { skillsCopy } from "@/copy/Skills";
-import gsap from "gsap";
-import { SplitText, ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
 import React from "react";
-gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
+import { useGSAP } from "@/lib/gsap";
+import { skillsAnimation } from "@/animations/skillsAnimation";
+import { removeGsapInit } from "@/helper/removeGsapInit";
 
 export default function SkillsSection() {
-  const skillsRef = React.useRef(null);
-  const titleRef = React.useRef(null);
-  const skillsContentRef = React.useRef(null);
-  const skillsListRef = React.useRef<HTMLDivElement[]>([]);
   const copy = skillsCopy;
+  const skillsRef = React.useRef<HTMLElement>(null);
+  const titleRef = React.useRef<HTMLHeadingElement>(null);
+  const skillsContentRef = React.useRef<HTMLDivElement>(null);
+  const skillsListRef = React.useRef<HTMLDivElement[]>([]);
 
   useGSAP(
     () => {
-      document.querySelectorAll(".gsap_init").forEach((el) => {
-        el.classList.remove("gsap_init");
-      });
+      removeGsapInit(skillsRef);
 
-      const titleSplit = new SplitText(titleRef.current, {
-        type: "chars, words",
-        tag: "span",
-        wordsClass: "word",
-        charsClass: "char",
-      });
-      titleSplit.chars.forEach((char) => {
-        char.classList.add("title_gradient_white");
-      });
-      gsap.from(titleSplit.chars, {
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 80%",
-          end: "70% 40%",
-          scrub: 1.5,
-        },
-        xPercent: 100,
-        ease: "expo.out",
-        stagger: 0.06,
-        opacity: 0,
-      });
+      if (
+        !titleRef.current ||
+        !skillsContentRef.current ||
+        skillsListRef.current.length === 0
+      )
+        return;
 
-      gsap.from(skillsListRef.current, {
-        scrollTrigger: {
-          trigger: skillsContentRef.current,
-          start: "top 80%",
-          end: "top 40%",
-          scrub: 1.5,
-        },
-        yPercent: 200,
-        opacity: 0,
-        stagger: 0.2,
-        filter: "blur(2px)",
-        ease: "expo.out",
+      skillsAnimation({
+        titleElement: titleRef.current,
+        skillsContentElement: skillsContentRef.current,
+        skillsListElement: skillsListRef.current,
       });
     },
     { scope: skillsRef }
@@ -68,12 +42,10 @@ export default function SkillsSection() {
       <div className="container flex flex-col items-center gap-15">
         <h2
           ref={titleRef}
-          className="main_title text-center overflow-visible gsap_init  
-          [&_.word]:whitespace-nowrap [&_.char]:inline-block will-change-transform"
+          className="main_title text-center *:block gsap_init will-change-transform"
         >
-          EU CONSTRUO SITES
-          <br />
-          AO REUNIR
+          <span className="title">EU CONSTRUO SITES</span>
+          <span className="title">AO REUNIR</span>
         </h2>
         <div
           ref={skillsContentRef}

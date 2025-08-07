@@ -1,78 +1,33 @@
 "use client";
 
 import { worksCopy } from "@/copy/Works";
-import gsap from "gsap";
-import { SplitText, ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
 import React from "react";
-gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
+import { useGSAP } from "@/lib/gsap";
+import { worksAnimation } from "@/animations/worksAnimation";
+import { removeGsapInit } from "@/helper/removeGsapInit";
 
 export default function WorksSection() {
   const copy = worksCopy;
-  const worksRef = React.useRef(null);
-  const titleRef = React.useRef(null);
+  const worksRef = React.useRef<HTMLElement>(null);
+  const titleRef = React.useRef<HTMLHeadingElement>(null);
   const worksListRef = React.useRef<HTMLLIElement[]>([]);
-  const linksRef = React.useRef(null);
+  const linksRef = React.useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      document.querySelectorAll(".gsap_init").forEach((el) => {
-        el.classList.remove("gsap_init");
-      });
+      removeGsapInit(worksRef);
 
-      const titleSplit = new SplitText(titleRef.current, {
-        type: "chars, words",
-        tag: "span",
-        wordsClass: "word",
-        charsClass: "char",
-      });
-      titleSplit.chars.forEach((char) => {
-        char.classList.add("title_gradient_white");
-      });
-      gsap.from(titleSplit.chars, {
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 80%",
-          end: "70% 40%",
-          scrub: 1.5,
-        },
-        xPercent: 100,
-        ease: "expo.out",
-        stagger: 0.06,
-        opacity: 0,
-      });
+      if (
+        !titleRef.current ||
+        worksListRef.current.length === 0 ||
+        !linksRef.current
+      )
+        return;
 
-      worksListRef.current.forEach((work, index) => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: work,
-            start: "top 80%",
-            end: "70% 60%",
-            scrub: 1.5,
-          },
-        });
-        if (index % 2 === 0) {
-          tl.from(work, {
-            xPercent: -100,
-            ease: "expo.out",
-          });
-        } else {
-          tl.from(work, {
-            xPercent: 100,
-            ease: "expo.out",
-          });
-        }
-      });
-
-      gsap.from(linksRef.current, {
-        scrollTrigger: {
-          trigger: linksRef.current,
-          start: "top 80%",
-          end: "70% 80%",
-          scrub: 1.5,
-        },
-        xPercent: -100,
-        ease: "expo.out",
+      worksAnimation({
+        titleElement: titleRef.current,
+        worksListElement: worksListRef.current,
+        linksElement: linksRef.current,
       });
     },
     { scope: worksRef }
@@ -84,10 +39,10 @@ export default function WorksSection() {
         <div>
           <h2
             ref={titleRef}
-            className="main_title [&_.word]:whitespace-nowrap 
-            [&_.char]:inline-block gsap_init will-change-transform"
+            className="main_title overflow-hidden *:block *:w-fit gsap_init will-change-transform"
           >
-            TRABALHOS <br /> SELECIONADOS
+            <span className="title">TRABALHOS</span>
+            <span className="title">SELECIONADOS</span>
           </h2>
         </div>
         <div>
@@ -124,7 +79,7 @@ export default function WorksSection() {
         </div>
         <div className="overflow-hidden">
           <div
-            className="flex gap-6 flex-wrap gsap_init will-change-transform"
+            className="flex gap-6 flex-wrap w-fit gsap_init will-change-transform"
             ref={linksRef}
           >
             <a className="link_text link_style group" href={``}>
