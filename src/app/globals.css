@@ -82,7 +82,7 @@
     @apply relative inline-block py-3 pr-6 text-gray-1 z-10;
   }
   .link_decoration {
-    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-white/10 group-hover:scale-y-12 transition-transform duration-300 ease-out -z-10 will-change-transform;
+    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-white/10 group-hover:scale-y-12 group-focus:scale-y-12 transition-transform duration-300 ease-out -z-10 will-change-transform;
   }
   /* ----- END-LINK ----- */
 

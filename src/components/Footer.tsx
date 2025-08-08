@@ -82,7 +82,7 @@ export default function Footer() {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative inline-block works_title title_gradient_black hover:scale-95 transition-all"
+                        className="relative inline-block works_title title_gradient_black hover:scale-95 focus:scale-95 transition-all"
                       >
                         {name}
                       </a>
