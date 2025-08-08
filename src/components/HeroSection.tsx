@@ -32,12 +32,12 @@ export default function HeroSection() {
       max-[640px]:pt-[149.5px] max-[400px]:pt-[195px]"
     >
       <div className="container flex flex-col items-center">
-        <div className="pb-20 pt-15">
+        <div className="">
           <h1
             ref={titleRef}
-            className="main_title text-center [&_.word]:whitespace-nowrap 
-            [&_.char]:inline-block gsap_init will-change-transform"
-            suppressHydrationWarning
+            className="pb-20 pt-15 main_title text-center [&_.word]:whitespace-nowrap 
+            [&_.char]:inline-block gsap_init will-change-transform
+            bg-[url('/images/david-bust-hero.webp')] bg-center bg-contain bg-no-repeat"
           >
             FRONT-END DEVELOPER & <br className="max-sm:hidden" /> UI/UX
             DESIGNER

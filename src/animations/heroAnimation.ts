@@ -16,7 +16,7 @@ export function heroAnimation({
   });
 
   titleSplit.chars.forEach((char) => {
-    char.classList.add("title_gradient_white");
+    char.classList.add("title_gradient_white", "mix-blend-difference");
   });
 
   const tl = gsap.timeline();

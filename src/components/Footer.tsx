@@ -37,7 +37,7 @@ export default function Footer() {
             justify-between p-6 text-gray-9 border-b-[1px] border-black/10 
             max-lg:space-y-8 max-lg:max-w-full"
             >
-              <p className="works_title">contato</p>
+              <p className="works_title w-fit">contato</p>
               <div className="space-x-6">
                 <a
                   href="mailto:allandasilva33@outlook.com"
@@ -82,7 +82,7 @@ export default function Footer() {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="works_title title_gradient_black"
+                        className="relative inline-block works_title title_gradient_black hover:scale-95 transition-all"
                       >
                         {name}
                       </a>

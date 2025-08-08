@@ -95,6 +95,10 @@
     @apply bg-gradient-to-b from-gray-10 to-gray-9 
       bg-clip-text text-transparent;
   }
+  .link_gradient_colorful {
+    @apply bg-gradient-to-b from-red-700 to-green-500 
+      bg-clip-text text-transparent;
+  }
   /* ----- END-GRADIENT ----- */
 
   /* ----- GSAP/CLIP-PATH ----- */
@@ -108,15 +112,15 @@
 
   /* ----- MODAL-INFO-ANIMATION ----- */
   .infos_in {
-    will-change: transform;
+    will-change: opacity;
     animation: infos_anim 0.4s linear;
   }
   @keyframes infos_anim {
     from {
-      transform: translateX(calc(100% + 24px));
+      opacity: 0.4;
     }
     to {
-      transform: translateX(0);
+      opacity: 1;
     }
   }
   /* ----- END-MODAL-INFO-ANIMATION ----- */
