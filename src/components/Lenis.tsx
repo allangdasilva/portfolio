@@ -7,7 +7,7 @@ export default function Lenis({ children }: PropsWithChildren) {
   return (
     <ReactLenis
       options={{
-        duration: 1.4,
+        duration: 1.2,
         gestureOrientation: "vertical",
       }}
       root

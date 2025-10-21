@@ -25,7 +25,7 @@ export default function Footer() {
               className="basis-full p-6 border-r-[1px] border-b-[1px]
              border-black/10 max-lg:border-r-0"
             >
-              <h3 className="main_title title_gradient_black">
+              <h3 className="fontDisplay title_gradient_black">
                 ALGO EM MENTE?
                 <br />
                 VAMOS CONVERSAR.
@@ -37,18 +37,18 @@ export default function Footer() {
             justify-between p-6 text-gray-9 border-b-[1px] border-black/10 
             max-lg:space-y-8 max-lg:max-w-full"
             >
-              <p className="works_title w-fit">contato</p>
+              <p className="fontWorksDisplay w-fit">contato</p>
               <div className="space-x-6">
                 <a
                   href="mailto:allandasilva33@outlook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link_text link_style group z-10"
+                  className="fontLinks linkBase group z-10"
                   style={{ color: "var(--gray-9)" }}
                 >
                   email
                   <span
-                    className="link_decoration"
+                    className="linkDecoration"
                     style={{ backgroundColor: "#0000001f" }}
                   ></span>
                 </a>
@@ -56,12 +56,12 @@ export default function Footer() {
                   href="https://wa.me/5511976447685"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link_text link_style group z-10"
+                  className="fontLinks linkBase group z-10"
                   style={{ color: "var(--gray-9)" }}
                 >
                   whatsapp
                   <span
-                    className="link_decoration"
+                    className="linkDecoration"
                     style={{ backgroundColor: "#0000001f" }}
                   ></span>
                 </a>
@@ -82,7 +82,7 @@ export default function Footer() {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative inline-block works_title title_gradient_black hover:scale-95 focus:scale-95 transition-all"
+                        className="relative inline-block fontWorksDisplay title_gradient_black hover:scale-95 focus:scale-95 transition-all"
                       >
                         {name}
                       </a>
@@ -107,7 +107,7 @@ export default function Footer() {
 
               <div
                 className="basis-full self-end flex flex-wrap justify-between 
-                gap-1 text-gray-7 footer_copy_info max-sm:flex-col"
+                gap-1 text-gray-7 fontCopyInfos max-sm:flex-col"
               >
                 <p>Allan Silva &copy; 2025</p>
                 <div className="relative flex justify-end flex-1 max-sm:justify-start">
@@ -116,7 +116,7 @@ export default function Footer() {
                     className="absolute top-0 right-0 p-6 space-y-6
                     -translate-y-[calc(100%_+_8px)] hidden z-40 shadow-md 
                     bg-white bg-[url('/images/noise.webp')] bg-blend-overlay 
-                    bg-contain max-sm:p-3 max-sm:left-0 max-sm:space-y-3 infos_in"
+                    bg-contain max-sm:p-3 max-sm:left-0 max-sm:space-y-3 copyInfosAnimation"
                   >
                     <div className="text-sm max-sm:text-xs">
                       <p className="font-medium">01-fonts</p>

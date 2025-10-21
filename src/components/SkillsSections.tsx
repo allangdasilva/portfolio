@@ -5,7 +5,6 @@ import { skillsCopy } from "@/copy/Skills";
 import React from "react";
 import { useGSAP } from "@/lib/gsap";
 import { skillsAnimation } from "@/animations/skillsAnimation";
-import { removeGsapInit } from "@/helper/removeGsapInit";
 
 export default function SkillsSection() {
   const copy = skillsCopy;
@@ -16,8 +15,6 @@ export default function SkillsSection() {
 
   useGSAP(
     () => {
-      removeGsapInit(skillsRef);
-
       if (
         !titleRef.current ||
         !skillsContentRef.current ||
@@ -40,10 +37,7 @@ export default function SkillsSection() {
       className=" py-40 bg-gray-10 overflow-hidden"
     >
       <div className="container flex flex-col items-center gap-15">
-        <h2
-          ref={titleRef}
-          className="main_title text-center *:block gsap_init will-change-transform"
-        >
+        <h2 ref={titleRef} className="fontDisplay text-center *:block">
           <span className="title">EU CONSTRUO SITES</span>
           <span className="title">AO REUNIR</span>
         </h2>
@@ -58,7 +52,7 @@ export default function SkillsSection() {
               }}
               key={skill.key}
               className={`flex flex-col items-center gap-2 text-white
-            ${index === 0 ? "basis-full" : ""} gsap_init will-change-transform`}
+            ${index === 0 ? "basis-full" : ""}`}
             >
               <Image
                 src={skill.image.src}
@@ -66,7 +60,7 @@ export default function SkillsSection() {
                 width={skill.image.width}
                 height={skill.image.height}
               />
-              <p className="link_text">{skill.name}</p>
+              <p className="fontLinks">{skill.name}</p>
             </div>
           ))}
         </div>

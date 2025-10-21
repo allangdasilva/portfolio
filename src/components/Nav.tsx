@@ -9,22 +9,23 @@ export default function Nav() {
   const copy = navCopy;
 
   return (
-    <nav className="fixed w-full top-0 left-0 z-50 bg-gradient-to-b from-black/40 to-transparent max-[640px]:from-black/60">
-      <div className="container w-full flex justify-between items-center gap-6 py-6 max-sm:flex-col max-sm:gap-2">
-        <Link className="inline-block" href={"/"}>
+    <nav className="fixed w-full top-0 left-0 z-50 bg-gradient-to-b from-black/60 to-transparent">
+      <div className="container w-full flex flex-col justify-between items-center gap-3 py-6 min-sm:flex-row min-sm:gap-6">
+        <Link href={"/"}>
           <Image
+            className="max-w-7 min-sm:max-w-none"
             src={`/svg/logo-a-coding-white.svg`}
-            alt="Logo Allan Coding"
+            alt="Allan Coding"
             width={38}
             height={52}
           />
         </Link>
-        <ul className="flex justify-between gap-6 max-[400px]:flex-col max-[400px]:items-center max-[400px]:gap-1">
+        <ul className="flex flex-col justify-center items-center gap-3 min-sm:flex-row min-sm:gap-6">
           {copy.map(({ key, id, name }) => (
             <li key={key}>
-              <a className="link_text link_style group" href={`#${id}`}>
+              <a className="fontLinks linkBase group" href={`#${id}`}>
                 {name}
-                <span className="link_decoration"></span>
+                <span className="linkDecoration"></span>
               </a>
             </li>
           ))}

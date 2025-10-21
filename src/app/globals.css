@@ -46,6 +46,12 @@
   }
 }
 
+body {
+  background: var(--gray-10);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @utility container {
   margin-inline: auto;
   padding-inline: 1.5rem;
@@ -53,66 +59,57 @@
 
 @layer utilities {
   /* ----- TYPOGRAPHY ----- */
-  .main_title {
-    @apply font-krisha text-9xl tracking-[0.02em] leading-[0.85] 
-    max-lg:text-8xl max-sm:text-7xl;
+  .fontDisplay {
+    @apply font-krisha tracking-wide text-white;
+    font-size: clamp(3.75rem, 18vw, 8rem);
+    line-height: clamp(56px, 16vw, 118px);
   }
-  .works_title {
-    @apply font-krisha text-6xl tracking-[0.02em] leading-[0.95]
-    max-lg:text-5xl max-sm:text-4xl;
+  .fontWorksDisplay {
+    @apply font-krisha tracking-wide;
+    font-size: clamp(2.25rem, 10vw, 3.75rem);
+    line-height: clamp(36px, 10vw, 56px);
   }
-  .works_subtitle {
-    @apply font-krisha text-3xl tracking-[0.02em] leading-[1]
-    max-lg:text-2xl max-sm:text-xl;
+  .fontWorksSubDisplay {
+    @apply font-krisha tracking-wide;
+    font-size: clamp(1.25rem, 5vw, 1.875rem);
+    line-height: clamp(24px, 5vw, 32px);
   }
-  .paragraph {
-    @apply font-dm-sans font-medium text-base leading-[1.25];
+  .fontBody {
+    @apply font-dm-sans font-medium text-base leading-5;
   }
-  .footer_copy_info {
-    @apply font-dm-sans font-extralight text-base leading-[1.25];
+  .fontCopyInfos {
+    @apply font-dm-sans font-extralight text-base leading-5;
   }
-  /* ----- END-TYPOGRAPHY ----- */
+  .fontLinks {
+    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-5;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: clamp(18px, 2vw, 20px);
+  }
 
   /* ----- LINK ----- */
-  .link_text {
-    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-[1.25]
-    max-sm:text-sm;
-  }
-  .link_style {
+  .linkBase {
     @apply relative inline-block py-3 pr-6 text-gray-1 z-10;
   }
-  .link_decoration {
-    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-white/10 group-hover:scale-y-12 group-focus:scale-y-12 transition-transform duration-300 ease-out -z-10 will-change-transform;
+  .linkDecoration {
+    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-gray-7 opacity-80 group-hover:scale-y-12 group-focus-visible:scale-y-12 transition-transform duration-300 ease-in-out -z-10;
   }
-  /* ----- END-LINK ----- */
 
   /* ----- GRADIENT ----- */
   .title_gradient_white {
-    @apply bg-gradient-to-b from-white to-gray-1 
-      bg-clip-text text-transparent;
+    @apply bg-gradient-to-b from-white to-gray-1 bg-clip-text text-transparent;
   }
   .title_gradient_black {
     @apply bg-gradient-to-b from-gray-10 to-gray-9 
       bg-clip-text text-transparent;
   }
-  .link_gradient_colorful {
-    @apply bg-gradient-to-b from-red-700 to-green-500 
-      bg-clip-text text-transparent;
-  }
-  /* ----- END-GRADIENT ----- */
 
-  /* ----- GSAP/CLIP-PATH ----- */
-  .gsap_init {
-    @apply opacity-0 pointer-events-none;
-  }
-  .clip_desc {
+  /* ----- CLIP-PATH-DESCRIPTION ----- */
+  .clipPathDesccription {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
-  /* ----- END-GSAP/CLIP-PATH ----- */
 
-  /* ----- MODAL-INFO-ANIMATION ----- */
-  .infos_in {
-    will-change: opacity;
+  /* ----- COPY-INFO-ANIMATION ----- */
+  .copyInfosAnimation {
     animation: infos_anim 0.4s linear;
   }
   @keyframes infos_anim {
@@ -123,15 +120,4 @@
       opacity: 1;
     }
   }
-  /* ----- END-MODAL-INFO-ANIMATION ----- */
-}
-
-html {
-  scroll-behavior: auto !important;
-  /* scrollbar-width: none; */
-}
-body {
-  background: var(--gray-10);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
