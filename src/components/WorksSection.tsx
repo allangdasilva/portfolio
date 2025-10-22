@@ -32,8 +32,8 @@ export default function WorksSection() {
   // );
 
   return (
-    <section ref={worksRef} id="works" className="py-[68px] sm:py-28">
-      <div className="container flex flex-col gap-[46px] sm:gap-[92px]">
+    <section ref={worksRef} id="works" className="py-17 sm:py-28">
+      <div className="container flex flex-col gap-11.5 sm:gap-23">
         {/* TITLE */}
         <div>
           <h2
@@ -47,7 +47,7 @@ export default function WorksSection() {
 
         {/* WORKS */}
         <div>
-          <ul className="flex flex-col gap-[26px] overflow-hidden sm:gap-[46px]">
+          <ul className="flex flex-col gap-6.5 overflow-hidden sm:gap-11.5">
             {copy.map(({ key, project, description, url }, index) => (
               <li
                 ref={(el) => {

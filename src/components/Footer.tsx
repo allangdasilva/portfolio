@@ -22,7 +22,7 @@ export default function Footer() {
         >
           <div className="flex max-lg:flex-col">
             <div
-              className="basis-full p-6 border-r-[1px] border-b-[1px]
+              className="basis-full p-6 border-r border-b
              border-black/10 max-lg:border-r-0"
             >
               <h3 className="fontDisplay title_gradient_black">
@@ -34,7 +34,7 @@ export default function Footer() {
 
             <div
               className="basis-full max-w-1/3 min-w-fit flex flex-col 
-            justify-between p-6 text-gray-9 border-b-[1px] border-black/10 
+            justify-between p-6 text-gray-9 border-b border-black/10 
             max-lg:space-y-8 max-lg:max-w-full"
             >
               <p className="fontWorksDisplay w-fit">contato</p>
@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="flex max-lg:flex-col">
             <div
               className="flex justify-between flex-wrap p-6 basis-full overflow-hidden
-              gap-y-37 border-r-[1px] border-black/10 max-lg:border-r-0 max-lg:gap-8"
+              gap-y-37 border-r border-black/10 max-lg:border-r-0 max-lg:gap-8"
             >
               <div className="basis-1/2 space-y-3">
                 <ul className="flex flex-col">
@@ -114,7 +114,7 @@ export default function Footer() {
                   <div
                     ref={infosRef}
                     className="absolute top-0 right-0 p-6 space-y-6
-                    -translate-y-[calc(100%_+_8px)] hidden z-40 shadow-md 
+                    -translate-y-[calc(100%+8px)] hidden z-40 shadow-md 
                     bg-white bg-[url('/images/noise.webp')] bg-blend-overlay 
                     bg-contain max-sm:p-3 max-sm:left-0 max-sm:space-y-3 copyInfosAnimation"
                   >

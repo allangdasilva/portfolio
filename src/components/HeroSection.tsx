@@ -22,17 +22,16 @@ export default function HeroSection() {
   // { scope: heroRef }
 
   return (
-    <section ref={heroRef} className="pt-[194px] min-sm:pt-[100px]">
-      <div className="container flex flex-col items-center justify-center gap-8 pt-3 pb-[68px] min-sm:pb-28 min-sm:gap-14">
+    <section ref={heroRef} className="pt-48.5 sm:pt-25">
+      <div className="container flex flex-col items-center justify-center gap-8 pt-3 pb-17 sm:pb-28 sm:gap-14">
         {/* TITLE */}
-        <div className="relative py-9 min-sm:py-14">
+        <div className="relative py-9 sm:py-14">
           <h1
             ref={titleRef}
             className="fontDisplay text-center mix-blend-difference [&_.word]:whitespace-nowrap 
             [&_.char]:inline-block "
           >
-            Dev Front-End & <br className="hidden min-sm:block" /> Ui/Ux
-            Designer
+            Dev Front-End & <br className="hidden sm:block" /> Ui/Ux Designer
           </h1>
           <span
             aria-hidden="true"

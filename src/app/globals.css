@@ -81,7 +81,7 @@ body {
     @apply font-dm-sans font-extralight text-base leading-5;
   }
   .fontLinks {
-    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-5;
+    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-5 text-gray-1;
     font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: clamp(18px, 2vw, 20px);
   }
