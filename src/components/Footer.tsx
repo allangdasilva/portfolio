@@ -1,29 +1,48 @@
 "use client";
 
 import { socialCopy } from "@/copy/Social";
+import useCloseModal from "@/hooks/useCloseModal";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
+  const [isOpen, setIsOpen] = React.useState(false);
   const copy = socialCopy;
   const infosRef = React.useRef<HTMLDivElement>(null);
 
-  function handleInfos() {
-    infosRef.current?.classList.toggle("hidden");
-  }
+  React.useEffect(() => {
+    if (!infosRef.current) return;
+
+    const focusableSelectors = "button, [href], input, select, textarea";
+    const focusableElements = Array.from(
+      infosRef.current?.querySelectorAll(focusableSelectors)
+    );
+    focusableElements.forEach((el) => {
+      if (!isOpen) {
+        el.setAttribute("tabIndex", "-1");
+      } else {
+        el.removeAttribute("tabIndex");
+      }
+    });
+  }, [isOpen]);
+
+  useCloseModal(infosRef, isOpen, () => setIsOpen(false));
 
   return (
-    <footer id="contact" className="pt-20 pb-6 bg-gray-10">
+    <footer id="contact" className="pt-17 pb-6 sm:pt-28">
       <div className="container">
         <div
           className="bg-gray-1 bg-[url('/images/noise.webp')] bg-repeat 
           bg-blend-overlay"
         >
-          <div className="flex max-lg:flex-col">
+          {/* GRID WRAPPER */}
+          <div className="grid lg:grid-cols-10">
+            {/* TITLE */}
             <div
-              className="basis-full p-6 border-r border-b
-             border-black/10 max-lg:border-r-0"
+              className="p-3 border-b
+             border-black/10 lg:p-6 lg:col-start-1 lg:col-end-8"
             >
               <h3 className="fontDisplay title_gradient_black">
                 ALGO EM MENTE?
@@ -32,13 +51,13 @@ export default function Footer() {
               </h3>
             </div>
 
+            {/* CONTACT */}
             <div
-              className="basis-full max-w-1/3 min-w-fit flex flex-col 
-            justify-between p-6 text-gray-9 border-b border-black/10 
-            max-lg:space-y-8 max-lg:max-w-full"
+              className="p-3 min-h-48 flex flex-col place-content-between border-b
+             border-black/10 lg:border-l lg:p-6 lg:col-start-8 lg:col-end-11"
             >
-              <p className="fontWorksDisplay w-fit">contato</p>
-              <div className="space-x-6">
+              <p className="fontWorksDisplay title_gradient_black">contato</p>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
                 <a
                   href="mailto:allandasilva33@outlook.com"
                   target="_blank"
@@ -67,105 +86,132 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-          </div>
 
-          <div className="flex max-lg:flex-col">
-            <div
-              className="flex justify-between flex-wrap p-6 basis-full overflow-hidden
-              gap-y-37 border-r border-black/10 max-lg:border-r-0 max-lg:gap-8"
-            >
-              <div className="basis-1/2 space-y-3">
-                <ul className="flex flex-col">
+            {/* INFOS/LINKS */}
+            <div className="relative flex flex-col place-content-between gap-6 m-3 overflow-hidden lg:m-6 lg:col-start-1 lg:col-end-8">
+              {/* LINKS/LOGO */}
+              <div className="flex justify-between">
+                <ul className="flex flex-col gap-2">
                   {copy.map(({ key, name, url }) => (
                     <li key={key}>
                       <a
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative inline-block fontWorksDisplay title_gradient_black hover:scale-95 focus:scale-95 transition-all"
+                        className="inline-block pr-6 group"
                       >
-                        {name}
+                        <span className="inline-block fontWorksDisplay title_gradient_black group-hover:translate-x-6 group-focus-visible:translate-x-6 transition-transform duration-300 ease-in-out">
+                          {name}
+                        </span>
                       </a>
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div
-                className="basis-1/2 flex justify-end items-start 
-                max-lg:hidden"
-              >
-                <Link href="/">
+                <Link
+                  aria-hidden="true"
+                  className="max-w-15 max-h-fit lg:max-w-none"
+                  href="/"
+                >
                   <Image
                     src={`/svg/logo-allan-coding-black.svg`}
                     width={99}
                     height={44}
-                    alt="Logo Allan Coding"
+                    alt=""
                   />
                 </Link>
               </div>
 
-              <div
-                className="basis-full self-end flex flex-wrap justify-between 
-                gap-1 text-gray-7 fontCopyInfos max-sm:flex-col"
-              >
-                <p>Allan Silva &copy; 2025</p>
-                <div className="relative flex justify-end flex-1 max-sm:justify-start">
-                  <div
-                    ref={infosRef}
-                    className="absolute top-0 right-0 p-6 space-y-6
-                    -translate-y-[calc(100%+8px)] hidden z-40 shadow-md 
-                    bg-white bg-[url('/images/noise.webp')] bg-blend-overlay 
-                    bg-contain max-sm:p-3 max-sm:left-0 max-sm:space-y-3 copyInfosAnimation"
-                  >
-                    <div className="text-sm max-sm:text-xs">
-                      <p className="font-medium">01-fonts</p>
-                      <p>
-                        <a
-                          className="underline"
-                          href="https://www.behance.net/dalerms"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          KRISHA
-                        </a>{" "}
-                        por Mukhiddinov
-                      </p>
-                      <p>
-                        <a
-                          className="underline"
-                          href="https://fonts.google.com/specimen/DM+Sans?query=Colophon+Foundry"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          DM Sans
-                        </a>{" "}
-                        por Colophon Foundry
-                      </p>
-                    </div>
-                    <div className="text-sm max-sm:text-xs">
-                      <p className="font-medium">02-infos</p>
-                      <p className="max-w-[40ch]">
-                        Projetado no figma, desenvolvido com Next.JS | Tailwind
-                        | GSAP | Lenis, imagens 3d feitas no blender
-                      </p>
-                    </div>
+              {/* COPY */}
+              <div className="flex flex-col-reverse justify-start gap-3 min-h-34.5 lg:min-h-auto lg:flex-row lg:justify-between lg:items-center">
+                {/* TEXT */}
+
+                <p className="fontCopyInfos text-gray-7">
+                  Allan Silva &copy; 2025
+                </p>
+
+                {/* INFOS */}
+                <div>
+                  <div className="relative ">
+                    <button
+                      aria-controls="infos-modal"
+                      onClick={() => setIsOpen(true)}
+                      className={clsx(
+                        "cursor-pointer fontCopyInfos text-gray-7",
+                        {
+                          "pointer-events-none": isOpen,
+                        }
+                      )}
+                      type="button"
+                    >
+                      infos & créditos
+                    </button>
                   </div>
+                </div>
+              </div>
+
+              {/* MODAL */}
+              <div
+                id="infos-modal"
+                aria-hidden={!isOpen}
+                tabIndex={isOpen ? 0 : -1}
+                ref={infosRef}
+                role="dialog"
+                aria-modal={isOpen}
+                className={clsx(
+                  "absolute bottom-16 left-0 p-6 space-y-6 z-40 shadow-md transition-transform duration-300 ease-in-out bg-white lg:right-0 lg:left-auto lg:bottom-8",
+                  {
+                    "translate-x-0": isOpen,
+                    "-translate-x-[200%]": !isOpen,
+                  }
+                )}
+              >
+                <div className="absolute right-6 top-6 fontCopyInfos text-gray-7 ">
                   <button
-                    onClick={handleInfos}
-                    className="cursor-pointer max-sm:text-start"
+                    onClick={() => setIsOpen(false)}
+                    className="cursor-pointer"
                   >
-                    infos & créditos
+                    fechar
                   </button>
+                </div>
+                <div className="fontCopyInfos text-gray-7">
+                  <p className="font-medium mb-1">01-fonts</p>
+                  <p>
+                    <a
+                      className="underline"
+                      href="https://www.behance.net/dalerms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      KRISHA
+                    </a>{" "}
+                    por Mukhiddinov
+                  </p>
+                  <p>
+                    <a
+                      className="underline"
+                      href="https://fonts.google.com/specimen/DM+Sans?query=Colophon+Foundry"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      DM Sans
+                    </a>{" "}
+                    por Colophon Foundry
+                  </p>
+                </div>
+                <div className="fontCopyInfos text-gray-7">
+                  <p className="font-medium mb-1">02-infos</p>
+                  <p className="max-w-[40ch]">
+                    Projetado no figma, desenvolvido com Next.JS | Tailwind |
+                    GSAP | Lenis, imagens 3d feitas no blender
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div
-              className="flex items-center justify-center basis-full max-w-1/3 
-              max-lg:max-w-full"
-            >
+            {/* IMAGE */}
+            <div className="border-t border-black/10 lg:border-t-0 lg:border-l lg:col-start-8 lg:col-end-11">
               <Image
+                className="w-full h-full object-cover"
                 src={"/images/david-bust.webp"}
                 alt="Busto David 3d"
                 width={500}

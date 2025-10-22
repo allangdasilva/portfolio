@@ -74,16 +74,16 @@ body {
     font-size: clamp(1.25rem, 5vw, 1.875rem);
     line-height: clamp(24px, 5vw, 32px);
   }
+  .fontLinks {
+    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-5 text-gray-1;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: clamp(18px, 2vw, 20px);
+  }
   .fontBody {
     @apply font-dm-sans font-medium text-base leading-5;
   }
   .fontCopyInfos {
     @apply font-dm-sans font-extralight text-base leading-5;
-  }
-  .fontLinks {
-    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-5 text-gray-1;
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    line-height: clamp(18px, 2vw, 20px);
   }
 
   /* ----- LINK ----- */
