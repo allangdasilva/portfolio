@@ -23,9 +23,9 @@ export default function HeroSection() {
 
   return (
     <section ref={heroRef} className="pt-[194px] min-sm:pt-[100px]">
-      <div className="container flex flex-col items-center justify-center gap-[28px] pt-[28px] pb-[68px] min-sm:pb-28 min-sm:gap-[48px] min-sm:pt-[48px]">
+      <div className="container flex flex-col items-center justify-center gap-8 pt-3 pb-[68px] min-sm:pb-28 min-sm:gap-14">
         {/* TITLE */}
-        <div className="relative py-10 min-sm:py-16">
+        <div className="relative py-9 min-sm:py-14">
           <h1
             ref={titleRef}
             className="fontDisplay text-center mix-blend-difference [&_.word]:whitespace-nowrap 

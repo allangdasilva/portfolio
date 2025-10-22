@@ -4,6 +4,7 @@ import { worksCopy } from "@/copy/Works";
 import React from "react";
 import { useGSAP } from "@/lib/gsap";
 import { worksAnimation } from "@/animations/worksAnimation";
+import clsx from "clsx";
 
 export default function WorksSection() {
   const copy = worksCopy;
@@ -12,27 +13,28 @@ export default function WorksSection() {
   const worksListRef = React.useRef<HTMLLIElement[]>([]);
   const linksRef = React.useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      if (
-        !titleRef.current ||
-        worksListRef.current.length === 0 ||
-        !linksRef.current
-      )
-        return;
+  // useGSAP(
+  //   () => {
+  //     if (
+  //       !titleRef.current ||
+  //       worksListRef.current.length === 0 ||
+  //       !linksRef.current
+  //     )
+  //       return;
 
-      worksAnimation({
-        titleElement: titleRef.current,
-        worksListElement: worksListRef.current,
-        linksElement: linksRef.current,
-      });
-    },
-    { scope: worksRef }
-  );
+  //     worksAnimation({
+  //       titleElement: titleRef.current,
+  //       worksListElement: worksListRef.current,
+  //       linksElement: linksRef.current,
+  //     });
+  //   },
+  //   { scope: worksRef }
+  // );
 
   return (
-    <section ref={worksRef} id="works" className="py-20 bg-gray-10">
-      <div className="container flex flex-col gap-16">
+    <section ref={worksRef} id="works" className="py-[68px] sm:py-28">
+      <div className="container flex flex-col gap-[46px] sm:gap-[92px]">
+        {/* TITLE */}
         <div>
           <h2
             ref={titleRef}
@@ -42,38 +44,56 @@ export default function WorksSection() {
             <span className="title">SELECIONADOS</span>
           </h2>
         </div>
+
+        {/* WORKS */}
         <div>
-          <ul className="flex flex-col gap-[60px] overflow-hidden">
+          <ul className="flex flex-col gap-[26px] overflow-hidden sm:gap-[46px]">
             {copy.map(({ key, project, description, url }, index) => (
               <li
                 ref={(el) => {
                   if (el) worksListRef.current[index] = el;
                 }}
-                className={`flex items-center gap-6 ${
-                  index % 2 === 0
-                    ? "max-[640px]:items-end max-[640px]:text-end"
-                    : "flex-row-reverse max-[640px]:items-start"
-                } max-[640px]:flex-col max-[640px]:gap-4`}
+                className={clsx(
+                  "flex flex-col justify-center gap-3 sm:gap-6 sm:flex-row sm:items-center",
+                  {
+                    "items-end": index % 2 === 0,
+                    "items-start sm:flex-row-reverse": index % 2 !== 0,
+                  }
+                )}
                 key={key}
               >
+                {/* WORKS TITLE */}
                 <div className="w-full max-w-fit">
                   <h2 className="fontWorksDisplay title_gradient_white">
                     {project}
                   </h2>
                 </div>
-                <div className="relative w-full h-72 bg-gray-2">
+
+                {/* WORKS CONTENT */}
+                <a
+                  className="relative w-full h-75 bg-gray-2"
+                  href="http://"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <p
-                    className={`absolute fontWorksSubDisplay title_gradient_black top-4.5 mix-blend-difference ${
-                      index % 2 === 0 ? "right-6" : "left-6"
-                    } `}
+                    className={clsx(
+                      "absolute fontWorksSubDisplay title_gradient_black top-6",
+                      {
+                        "right-6": index % 2 === 0,
+                        "left-6": index % 2 !== 0,
+                      }
+                    )}
                   >
                     {description}
                   </p>
-                </div>
+                </a>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* BUTTONS */}
         <div className="overflow-hidden">
           <div className="flex gap-6 flex-wrap w-fit" ref={linksRef}>
             <a className="fontLinks linkBase group" href={``}>

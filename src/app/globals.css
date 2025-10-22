@@ -62,7 +62,7 @@ body {
   .fontDisplay {
     @apply font-krisha tracking-wide text-white;
     font-size: clamp(3.75rem, 18vw, 8rem);
-    line-height: clamp(56px, 16vw, 118px);
+    line-height: clamp(52px, 16vw, 108px);
   }
   .fontWorksDisplay {
     @apply font-krisha tracking-wide;
