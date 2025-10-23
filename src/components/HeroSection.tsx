@@ -28,7 +28,7 @@ export default function HeroSection() {
         <div className="relative py-9 sm:py-14">
           <h1
             ref={titleRef}
-            className="fontDisplay text-center mix-blend-difference [&_.word]:whitespace-nowrap 
+            className="fontDisplay text-center textLinearWhite uppercase mix-blend-difference [&_.word]:whitespace-nowrap 
             [&_.char]:inline-block "
           >
             Dev Front-End & <br className="hidden sm:block" /> Ui/Ux Designer
@@ -55,7 +55,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-2 max-w-[45ch] text-gray-1 fontBody text-center">
+          <div className="flex flex-col gap-2 max-w-[45ch] fontBody text-gray-1 text-center">
             <p>Olá! Sou Allan, desenvolvedor front-end e UI/UX designer.</p>
             <p>
               Há cerca de 1 ano venho mergulhando de cabeça nesse universo, se

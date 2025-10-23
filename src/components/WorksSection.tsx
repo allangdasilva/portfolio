@@ -38,7 +38,7 @@ export default function WorksSection() {
         <div>
           <h2
             ref={titleRef}
-            className="fontDisplay overflow-hidden *:block *:w-fit"
+            className="fontDisplay textLinearWhite uppercase overflow-hidden *:block *:w-fit"
           >
             <span className="title">TRABALHOS</span>
             <span className="title">SELECIONADOS</span>
@@ -64,9 +64,9 @@ export default function WorksSection() {
               >
                 {/* WORKS TITLE */}
                 <div className="w-full max-w-fit">
-                  <h2 className="fontWorksDisplay title_gradient_white">
+                  <h3 className="fontWorksDisplay textLinearWhite uppercase">
                     {project}
-                  </h2>
+                  </h3>
                 </div>
 
                 {/* WORKS CONTENT */}
@@ -78,7 +78,7 @@ export default function WorksSection() {
                 >
                   <p
                     className={clsx(
-                      "absolute fontWorksSubDisplay title_gradient_black top-6",
+                      "absolute fontWorksSubDisplay textLinearBlack uppercase top-6",
                       {
                         "right-6": index % 2 === 0,
                         "left-6": index % 2 !== 0,
@@ -95,12 +95,15 @@ export default function WorksSection() {
 
         {/* BUTTONS */}
         <div className="overflow-hidden">
-          <div className="flex gap-6 flex-wrap w-fit" ref={linksRef}>
-            <a className="fontLinks linkBase group" href={``}>
+          <div
+            className="flex gap-6 flex-wrap w-fit fontLinks text-gray-1"
+            ref={linksRef}
+          >
+            <a className="linkBase group" href={``}>
               ver mais
               <span className="linkDecoration"></span>
             </a>
-            <a className="fontLinks linkBase group" href={``}>
+            <a className="linkBase group" href={``}>
               currículo
               <span className="linkDecoration"></span>
             </a>

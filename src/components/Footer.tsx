@@ -42,9 +42,9 @@ export default function Footer() {
             {/* TITLE */}
             <div
               className="p-3 border-b
-             border-black/10 lg:p-6 lg:col-start-1 lg:col-end-8"
+             border-black/20 lg:p-6 lg:col-start-1 lg:col-end-8"
             >
-              <h3 className="fontDisplay title_gradient_black">
+              <h3 className="fontDisplay textLinearBlack uppercase">
                 ALGO EM MENTE?
                 <br />
                 VAMOS CONVERSAR.
@@ -54,34 +54,36 @@ export default function Footer() {
             {/* CONTACT */}
             <div
               className="p-3 min-h-48 flex flex-col place-content-between border-b
-             border-black/10 lg:border-l lg:p-6 lg:col-start-8 lg:col-end-11"
+             border-black/20 lg:border-l lg:p-6 lg:col-start-8 lg:col-end-11"
             >
-              <p className="fontWorksDisplay title_gradient_black">contato</p>
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <h2 className="fontWorksDisplay textLinearBlack uppercase">
+                contato
+              </h2>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 fontLinks">
                 <a
                   href="mailto:allandasilva33@outlook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="fontLinks linkBase group z-10"
+                  className="linkBase group z-10"
                   style={{ color: "var(--gray-9)" }}
                 >
                   email
                   <span
                     className="linkDecoration"
-                    style={{ backgroundColor: "#0000001f" }}
+                    style={{ backgroundColor: "var(--gray-8)" }}
                   ></span>
                 </a>
                 <a
                   href="https://wa.me/5511976447685"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="fontLinks linkBase group z-10"
+                  className="linkBase group z-10"
                   style={{ color: "var(--gray-9)" }}
                 >
                   whatsapp
                   <span
                     className="linkDecoration"
-                    style={{ backgroundColor: "#0000001f" }}
+                    style={{ backgroundColor: "var(--gray-8)" }}
                   ></span>
                 </a>
               </div>
@@ -100,7 +102,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         className="inline-block pr-6 group"
                       >
-                        <span className="inline-block fontWorksDisplay title_gradient_black group-hover:translate-x-6 group-focus-visible:translate-x-6 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)]">
+                        <span className="inline-block fontWorksDisplay textLinearBlack uppercase group-hover:translate-x-6 group-focus-visible:translate-x-6 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)]">
                           {name}
                         </span>
                       </a>
@@ -109,7 +111,7 @@ export default function Footer() {
                 </ul>
                 <Link
                   aria-hidden="true"
-                  className="max-w-15 max-h-7 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:scale-95 focus-visible:scale-95 lg:max-w-none lg:max-h-11"
+                  className="max-w-15 max-h-7 lg:max-w-none lg:max-h-11"
                   href="/"
                 >
                   <Image
@@ -209,7 +211,7 @@ export default function Footer() {
             </div>
 
             {/* IMAGE */}
-            <div className="border-t border-black/10 lg:border-t-0 lg:border-l lg:col-start-8 lg:col-end-11">
+            <div className="border-t border-black/20 lg:border-t-0 lg:border-l lg:col-start-8 lg:col-end-11">
               <Image
                 className="w-full h-full object-cover"
                 src={"/images/david-bust.webp"}

@@ -23,7 +23,10 @@ export default function Nav() {
         <ul className="flex flex-col justify-center items-center gap-3 sm:flex-row sm:gap-6">
           {copy.map(({ key, id, name }) => (
             <li key={key}>
-              <a className="fontLinks linkBase group" href={`#${id}`}>
+              <a
+                className="fontLinks linkBase text-gray-1 group"
+                href={`#${id}`}
+              >
                 {name}
                 <span className="linkDecoration"></span>
               </a>

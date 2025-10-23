@@ -60,7 +60,7 @@ body {
 @layer utilities {
   /* ----- TYPOGRAPHY ----- */
   .fontDisplay {
-    @apply font-krisha tracking-wide text-white;
+    @apply font-krisha tracking-wide;
     font-size: clamp(3.75rem, 18vw, 8rem);
     line-height: clamp(52px, 16vw, 108px);
   }
@@ -75,7 +75,7 @@ body {
     line-height: clamp(24px, 5vw, 32px);
   }
   .fontLinks {
-    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-5 text-gray-1;
+    @apply font-dm-sans font-medium text-base tracking-[0.3em] leading-5;
     font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: clamp(18px, 2vw, 20px);
   }
@@ -88,20 +88,19 @@ body {
 
   /* ----- LINK ----- */
   .linkBase {
-    @apply relative inline-block py-3 pr-6 text-gray-1 z-10;
+    @apply relative inline-block py-3 pr-6 z-10;
   }
   .linkDecoration {
-    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-gray-7 opacity-80 group-hover:scale-y-12 group-focus-visible:scale-y-12 transition-transform duration-400 -z-10;
+    @apply absolute bottom-1/6 right-0 w-2/3 h-3/4 origin-bottom bg-gray-3 opacity-20 group-hover:scale-y-12 group-focus-visible:scale-y-12 transition-transform duration-400 -z-10;
     transition-timing-function: cubic-bezier(0.85, 0.09, 0.15, 0.91);
   }
 
   /* ----- GRADIENT ----- */
-  .title_gradient_white {
+  .textLinearWhite {
     @apply bg-linear-to-b from-white to-gray-1 bg-clip-text text-transparent;
   }
-  .title_gradient_black {
-    @apply bg-linear-to-b from-gray-10 to-gray-9 
-      bg-clip-text text-transparent;
+  .textLinearBlack {
+    @apply bg-linear-to-b from-gray-9 to-black bg-clip-text text-transparent;
   }
 
   /* ----- CLIP-PATH-DESCRIPTION ----- */

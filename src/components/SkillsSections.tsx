@@ -39,7 +39,10 @@ export default function SkillsSection() {
     >
       <div className="container flex flex-col items-center gap-11.5 sm:gap-23">
         {/* TITLE */}
-        <h2 ref={titleRef} className="fontDisplay text-center *:block">
+        <h2
+          ref={titleRef}
+          className="fontDisplay textLinearWhite uppercase text-center *:block"
+        >
           <span className="title">EU CONSTRUO SITES</span>
           <span className="title">AO REUNIR</span>
         </h2>
@@ -65,7 +68,7 @@ export default function SkillsSection() {
                 width={skill.image.width}
                 height={skill.image.height}
               />
-              <p className="fontLinks">{skill.name}</p>
+              <p className="fontLinks text-gray-1">{skill.name}</p>
             </div>
           ))}
         </div>
