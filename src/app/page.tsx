@@ -12,11 +12,16 @@ export default function Home() {
     <>
       <Loading />
       <Lenis>
-        <Nav />
-        <HeroSection />
-        <WorksSection />
-        <TechnologiesSection />
-        <SkillsSection />
+        <header>
+          <Nav />
+        </header>
+        <main>
+          <HeroSection />
+          <WorksSection />
+          <TechnologiesSection />
+          <SkillsSection />
+        </main>
+
         <Footer />
       </Lenis>
     </>

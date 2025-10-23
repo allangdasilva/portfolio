@@ -43,8 +43,8 @@ export default function SkillsSection() {
           ref={titleRef}
           className="fontDisplay textLinearWhite uppercase text-center *:block"
         >
-          <span className="title">EU CONSTRUO SITES</span>
-          <span className="title">AO REUNIR</span>
+          <span className="title">Eu construo sites</span>
+          <span className="title">ao reunir</span>
         </h2>
 
         {/* SKILLS */}

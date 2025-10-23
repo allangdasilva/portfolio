@@ -111,7 +111,7 @@ export default function Footer() {
                 </ul>
                 <Link
                   aria-hidden="true"
-                  className="max-w-15 max-h-7 lg:max-w-none lg:max-h-11"
+                  className="max-w-15 max-h-7 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:scale-105 focus-visible:scale-105 lg:max-w-none lg:max-h-11"
                   href="/"
                 >
                   <Image
