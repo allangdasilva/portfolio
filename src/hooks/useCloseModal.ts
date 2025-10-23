@@ -7,6 +7,7 @@ export default function useCloseModal<T extends HTMLElement>(
   isOpen: boolean,
   onClose: () => void
 ) {
+  // CLOSE OUTSIDECLICK
   useEffect(() => {
     if (!isOpen) return;
 

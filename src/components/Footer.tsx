@@ -100,7 +100,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         className="inline-block pr-6 group"
                       >
-                        <span className="inline-block fontWorksDisplay title_gradient_black group-hover:translate-x-6 group-focus-visible:translate-x-6 transition-transform duration-300 ease-in-out">
+                        <span className="inline-block fontWorksDisplay title_gradient_black group-hover:translate-x-6 group-focus-visible:translate-x-6 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)]">
                           {name}
                         </span>
                       </a>
@@ -109,7 +109,7 @@ export default function Footer() {
                 </ul>
                 <Link
                   aria-hidden="true"
-                  className="max-w-15 max-h-fit lg:max-w-none"
+                  className="max-w-15 max-h-7 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:scale-95 focus-visible:scale-95 lg:max-w-none lg:max-h-11"
                   href="/"
                 >
                   <Image
@@ -122,11 +122,11 @@ export default function Footer() {
               </div>
 
               {/* COPY */}
-              <div className="flex flex-col-reverse justify-start gap-3 min-h-34.5 lg:min-h-auto lg:flex-row lg:justify-between lg:items-center">
+              <div className="flex flex-col-reverse justify-start gap-3 min-h-34.5 lg:min-h-auto">
                 {/* TEXT */}
 
                 <p className="fontCopyInfos text-gray-7">
-                  Allan Silva &copy; 2025
+                  Allan Coding &copy; 2025
                 </p>
 
                 {/* INFOS */}
@@ -136,9 +136,9 @@ export default function Footer() {
                       aria-controls="infos-modal"
                       onClick={() => setIsOpen(true)}
                       className={clsx(
-                        "cursor-pointer fontCopyInfos text-gray-7",
+                        "cursor-pointer fontCopyInfos text-gray-7 transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-10 focus-visible:text-gray-10",
                         {
-                          "pointer-events-none": isOpen,
+                          "pointer-events-none text-gray-10": isOpen,
                         }
                       )}
                       type="button"
@@ -158,17 +158,17 @@ export default function Footer() {
                 role="dialog"
                 aria-modal={isOpen}
                 className={clsx(
-                  "absolute bottom-16 left-0 p-6 space-y-6 z-40 shadow-md transition-transform duration-300 ease-in-out bg-white lg:right-0 lg:left-auto lg:bottom-8",
+                  "absolute bottom-16 left-0 p-6 space-y-6 z-40 shadow-md -translate-x-[105%] transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] bg-white",
                   {
                     "translate-x-0": isOpen,
-                    "-translate-x-[200%]": !isOpen,
                   }
                 )}
               >
-                <div className="absolute right-6 top-6 fontCopyInfos text-gray-7 ">
+                <div className="absolute right-6 top-6">
                   <button
+                    type="button"
                     onClick={() => setIsOpen(false)}
-                    className="cursor-pointer"
+                    className="fontCopyInfos text-gray-7 cursor-pointer transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-10 focus-visible:text-gray-10"
                   >
                     fechar
                   </button>
@@ -177,7 +177,7 @@ export default function Footer() {
                   <p className="font-medium mb-1">01-fonts</p>
                   <p>
                     <a
-                      className="underline"
+                      className="underline transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-10 focus-visible:text-gray-10"
                       href="https://www.behance.net/dalerms"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -188,7 +188,7 @@ export default function Footer() {
                   </p>
                   <p>
                     <a
-                      className="underline"
+                      className="underline transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-10 focus-visible:text-gray-10"
                       href="https://fonts.google.com/specimen/DM+Sans?query=Colophon+Foundry"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -200,7 +200,7 @@ export default function Footer() {
                 </div>
                 <div className="fontCopyInfos text-gray-7">
                   <p className="font-medium mb-1">02-infos</p>
-                  <p className="max-w-[40ch]">
+                  <p className="max-w-[45ch]">
                     Projetado no figma, desenvolvido com Next.JS | Tailwind |
                     GSAP | Lenis, imagens 3d feitas no blender
                   </p>

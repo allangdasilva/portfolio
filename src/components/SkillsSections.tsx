@@ -35,7 +35,7 @@ export default function SkillsSection() {
     <section
       ref={skillsRef}
       id="skills"
-      className="py-17 bg-gray-10 overflow-hidden sm:py-28"
+      className="py-17 overflow-hidden sm:py-28"
     >
       <div className="container flex flex-col items-center gap-11.5 sm:gap-23">
         {/* TITLE */}

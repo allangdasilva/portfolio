@@ -55,7 +55,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-2 max-w-[40ch] text-gray-1 fontBody text-center">
+          <div className="flex flex-col gap-2 max-w-[45ch] text-gray-1 fontBody text-center">
             <p>Olá! Sou Allan, desenvolvedor front-end e UI/UX designer.</p>
             <p>
               Há cerca de 1 ano venho mergulhando de cabeça nesse universo, se
