@@ -34,8 +34,8 @@ export default function Footer() {
     <footer id="contact" className="pt-17 pb-6 sm:pt-28">
       <div className="container">
         <div
-          className="bg-gray-1 bg-[url('/images/noise.webp')] bg-repeat 
-          bg-blend-overlay"
+          className="bg-gray-1 bg-[url('/images/noise-light.jpg')] bg-repeat 
+           dark:bg-[url('/images/noise-dark.webp')] dark:bg-blend-overlay"
         >
           {/* GRID WRAPPER */}
           <div className="grid lg:grid-cols-10">

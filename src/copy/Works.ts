@@ -2,7 +2,6 @@ export const worksCopy = [
   {
     key: 1,
     project: "Dogs",
-    description: "Front-End",
     logo: {
       src: "/svg/logo-dogs.svg",
       width: 158,
@@ -15,7 +14,6 @@ export const worksCopy = [
   {
     key: 2,
     project: "Bikcraft",
-    description: "Front-End",
     logo: {
       src: "/svg/logo-bikcraft.svg",
       width: 165,
@@ -28,7 +26,6 @@ export const worksCopy = [
   {
     key: 3,
     project: "Photography",
-    description: "Front-End",
     logo: {
       src: "/svg/logo-photography-studio.svg",
       width: 662,
@@ -43,7 +40,6 @@ export const worksCopy = [
   {
     key: 4,
     project: "Acme",
-    description: "Front-End",
     logo: {
       src: "/svg/logo-acme.svg",
       width: 124,
@@ -51,6 +47,18 @@ export const worksCopy = [
       alt: "Logo acme",
     },
     bgColor: "#0070F3",
+    url: "",
+  },
+  {
+    key: 5,
+    project: "Teste",
+    logo: {
+      src: "/svg/logo-acme.svg",
+      width: 124,
+      height: 124,
+      alt: "Logo acme",
+    },
+    bgColor: "#0f0",
     url: "",
   },
 ];

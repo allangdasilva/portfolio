@@ -123,4 +123,20 @@ body {
   .clipPathDesccription {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
+
+  /* SKELETON */
+  .workSkeleton {
+    @apply absolute inset-0 bg-linear-to-r from-transparent via-black/20 to-transparent dark:via-white/20;
+    animation: shimmer 1.5s infinite alternate;
+  }
+}
+
+/* ANIMATION SKELETON */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-80%);
+  }
+  100% {
+    transform: translateX(80%);
+  }
 }
