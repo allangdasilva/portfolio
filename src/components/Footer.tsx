@@ -40,10 +40,7 @@ export default function Footer() {
           {/* GRID WRAPPER */}
           <div className="grid lg:grid-cols-10">
             {/* TITLE */}
-            <div
-              className="p-3 border-b
-             border-black/20 lg:p-6 lg:col-start-1 lg:col-end-8"
-            >
+            <div className="p-3 border-b border-white/20 lg:p-6 lg:col-start-1 lg:col-end-8 dark:border-black/20">
               <h3 className="fontDisplay textLinearBlack uppercase">
                 ALGO EM MENTE?
                 <br />
@@ -52,10 +49,7 @@ export default function Footer() {
             </div>
 
             {/* CONTACT */}
-            <div
-              className="p-3 min-h-48 flex flex-col place-content-between border-b
-             border-black/20 lg:border-l lg:p-6 lg:col-start-8 lg:col-end-11"
-            >
+            <div className="p-3 min-h-48 flex flex-col place-content-between border-white/20 border-b lg:border-l lg:p-6 lg:col-start-8 lg:col-end-11 dark:border-black/20">
               <h2 className="fontWorksDisplay textLinearBlack uppercase">
                 contato
               </h2>
@@ -111,10 +105,18 @@ export default function Footer() {
                 </ul>
                 <Link
                   aria-hidden="true"
-                  className="max-w-15 max-h-7 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:scale-105 focus-visible:scale-105 lg:max-w-none lg:max-h-11"
+                  className="max-w-15 max-h-7 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:scale-95 focus-visible:scale-95 lg:max-w-none lg:max-h-11"
                   href="/"
                 >
                   <Image
+                    className="block dark:hidden"
+                    src={`/svg/logo-allan-coding-white.svg`}
+                    width={99}
+                    height={44}
+                    alt=""
+                  />
+                  <Image
+                    className="hidden dark:block"
                     src={`/svg/logo-allan-coding-black.svg`}
                     width={99}
                     height={44}
@@ -170,16 +172,16 @@ export default function Footer() {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="fontCopyInfos text-gray-7 cursor-pointer transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-10 focus-visible:text-gray-10"
+                    className="fontCopyInfos text-gray-7 cursor-pointer transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-1 focus-visible:text-gray-1 dark:hover:text-gray-9 dark:focus-visible:text-gray-9"
                   >
                     fechar
                   </button>
                 </div>
-                <div className="fontCopyInfos text-gray-7">
+                <div className="fontCopyInfos text-gray-5">
                   <p className="font-medium mb-1">01-fonts</p>
                   <p>
                     <a
-                      className="underline transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-10 focus-visible:text-gray-10"
+                      className="underline transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-1 focus-visible:text-gray-1 dark:hover:text-gray-9 dark:focus-visible:text-gray-9"
                       href="https://www.behance.net/dalerms"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -190,7 +192,7 @@ export default function Footer() {
                   </p>
                   <p>
                     <a
-                      className="underline transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-10 focus-visible:text-gray-10"
+                      className="underline transition-colors duration-200 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:text-gray-1 focus-visible:text-gray-1 dark:hover:text-gray-9 dark:focus-visible:text-gray-9"
                       href="https://fonts.google.com/specimen/DM+Sans?query=Colophon+Foundry"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -200,7 +202,7 @@ export default function Footer() {
                     por Colophon Foundry
                   </p>
                 </div>
-                <div className="fontCopyInfos text-gray-7">
+                <div className="fontCopyInfos text-gray-5">
                   <p className="font-medium mb-1">02-infos</p>
                   <p className="max-w-[45ch]">
                     Projetado no figma, desenvolvido com Next.JS | Tailwind |
@@ -211,7 +213,7 @@ export default function Footer() {
             </div>
 
             {/* IMAGE */}
-            <div className="border-t border-black/20 lg:border-t-0 lg:border-l lg:col-start-8 lg:col-end-11">
+            <div className="border-t border-white/20 lg:border-t-0 lg:border-l lg:col-start-8 lg:col-end-11 dark:border-black/20">
               <Image
                 className="w-full h-full object-cover"
                 src={"/images/david-bust.webp"}

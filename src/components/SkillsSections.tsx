@@ -52,23 +52,31 @@ export default function SkillsSection() {
           ref={skillsContentRef}
           className="grid grid-cols-1 justify-items-center gap-y-9 gap-x-20 sm:grid-cols-2"
         >
-          {copy.map((skill, index) => (
+          {copy.map(({ key, image, name }, index) => (
             <div
               ref={(el) => {
                 if (el) skillsListRef.current[index] = el;
               }}
-              key={skill.key}
+              key={key}
               className={clsx("grid justify-items-center gap-2", {
                 "sm:col-span-full": index === 0,
               })}
             >
               <Image
-                src={skill.image.src}
-                alt={skill.image.alt}
-                width={skill.image.width}
-                height={skill.image.height}
+                className="block dark:hidden"
+                src={image.src.light}
+                alt=""
+                width={image.width}
+                height={image.height}
               />
-              <p className="fontLinks text-gray-1">{skill.name}</p>
+              <Image
+                className="hidden dark:block"
+                src={image.src.black}
+                alt=""
+                width={image.width}
+                height={image.height}
+              />
+              <p className="fontLinks text-gray-1">{name}</p>
             </div>
           ))}
         </div>

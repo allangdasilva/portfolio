@@ -28,8 +28,9 @@ export default function HeroSection() {
         <div className="relative py-9 sm:py-14">
           <h1
             ref={titleRef}
-            className="fontDisplay text-center textLinearWhite uppercase mix-blend-difference [&_.word]:whitespace-nowrap 
+            className="fontDisplay text-center textLinearHero uppercase mix-blend-difference [&_.word]:whitespace-nowrap 
             [&_.char]:inline-block "
+            style={{}}
           >
             Dev Front-End & <br className="hidden sm:block" /> Ui/Ux Designer
           </h1>
@@ -43,6 +44,15 @@ export default function HeroSection() {
         <div className="flex flex-col items-center gap-6" ref={descRef}>
           <div className="flex gap-6">
             <Image
+              className="block dark:hidden"
+              src={"/svg/logo-allan-coding-black.svg"}
+              alt="Allan Coding"
+              priority
+              width={98}
+              height={43}
+            />
+            <Image
+              className="hidden dark:block"
               src={"/svg/logo-allan-coding-white.svg"}
               alt="Allan Coding"
               priority

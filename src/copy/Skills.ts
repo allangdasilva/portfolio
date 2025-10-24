@@ -6,8 +6,10 @@ export const skillsCopy = [
     image: {
       width: 42,
       height: 42,
-      alt: "ícone performance",
-      src: "/svg/performance.svg",
+      src: {
+        light: "/svg/icon-performance-black.svg",
+        black: "/svg/icon-performance-white.svg",
+      },
     },
   },
   {
@@ -17,8 +19,10 @@ export const skillsCopy = [
     image: {
       width: 42,
       height: 38,
-      alt: "ícone estética",
-      src: "/svg/aesthetic.svg",
+      src: {
+        light: "/svg/icon-aesthetic-black.svg",
+        black: "/svg/icon-aesthetic-white.svg",
+      },
     },
   },
   {
@@ -28,8 +32,10 @@ export const skillsCopy = [
     image: {
       width: 42,
       height: 42,
-      alt: "ícone estratégia",
-      src: "/svg/strategy.svg",
+      src: {
+        light: "/svg/icon-strategy-black.svg",
+        black: "/svg/icon-strategy-white.svg",
+      },
     },
   },
 ];
