@@ -11,6 +11,7 @@ export default function Nav() {
   return (
     <nav className="fixed w-full top-0 left-0 z-50 bg-linear-to-b from-white/60 to-transparent dark:from-black/60">
       <div className="container w-full flex flex-col justify-between items-center gap-3 py-6 sm:flex-row sm:gap-6">
+        {/* LOGO */}
         <Link href={"/"}>
           <Image
             className="block max-w-7 sm:max-w-none dark:hidden"
@@ -27,6 +28,8 @@ export default function Nav() {
             height={52}
           />
         </Link>
+
+        {/* LIST */}
         <ul className="flex flex-col justify-center items-center gap-3 sm:flex-row sm:gap-6">
           {copy.map(({ key, id, name }) => (
             <li key={key}>

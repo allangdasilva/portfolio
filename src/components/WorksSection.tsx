@@ -6,6 +6,8 @@ import { useGSAP } from "@/lib/gsap";
 import { worksAnimation } from "@/animations/worksAnimation";
 import clsx from "clsx";
 import Image from "next/image";
+import useEaseIn from "@/hooks/useEaseIn";
+import { transitionEaseIn } from "@/types/classes";
 
 export default function WorksSection() {
   const copy = worksCopy;
@@ -43,12 +45,26 @@ export default function WorksSection() {
     { scope: worksSectionRef, dependencies: [visibleItems] }
   );
 
+  // EASE IN
+  const { ref: titleRef, visible: titleVisible } =
+    useEaseIn<HTMLHeadingElement>();
+  const { ref: buttonsRef, visible: buttonsVisible } =
+    useEaseIn<HTMLDivElement>();
+
   return (
     <section ref={worksSectionRef} id="works" className="py-17 sm:py-28">
       <div className="container flex flex-col gap-11.5 sm:gap-23">
         {/* TITLE */}
         <div>
-          <h2 className="fontDisplay textLinearWhite uppercase overflow-hidden *:block *:w-fit">
+          <h2
+            ref={titleRef}
+            className={clsx(
+              `${transitionEaseIn} fontDisplay textLinearWhite uppercase overflow-hidden *:block *:w-fit`,
+              {
+                "opacity-100": titleVisible,
+              }
+            )}
+          >
             <span className="title">Projetos</span>
             <span className="title">Selecionados</span>
           </h2>
@@ -115,7 +131,15 @@ export default function WorksSection() {
         </div>
 
         {/* BUTTONS */}
-        <div className="flex gap-6 flex-wrap w-fit fontLinks text-gray-1">
+        <div
+          ref={buttonsRef}
+          className={clsx(
+            `${transitionEaseIn} flex gap-6 flex-wrap w-fit fontLinks text-gray-1`,
+            {
+              "opacity-100": buttonsVisible,
+            }
+          )}
+        >
           <button
             onClick={handleVisibleItems}
             type="button"

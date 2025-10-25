@@ -25,7 +25,7 @@ export default function Loading() {
 
   return (
     <div ref={loadingWrapperRef}>
-      <div className="box_bg fixed top-0 left-0 w-full h-screen z-99        pointer-events-none bg-gray-8"></div>
+      <div className="box_bg fixed top-0 left-0 w-full h-screen z-99        pointer-events-none bg-gray-9"></div>
       <div className="box_bg fixed top-0 left-0 w-full h-screen z-98        pointer-events-none bg-gray-7"></div>
       <div className="box_bg fixed top-0 left-0 w-full h-screen z-97        pointer-events-none bg-gray-5"></div>
     </div>

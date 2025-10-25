@@ -6,6 +6,8 @@ import React from "react";
 import { useGSAP } from "@/lib/gsap";
 import { skillsAnimation } from "@/animations/skillsAnimation";
 import clsx from "clsx";
+import useEaseIn from "@/hooks/useEaseIn";
+import { transitionEaseIn } from "@/types/classes";
 
 export default function SkillsSection() {
   const copy = skillsCopy;
@@ -13,6 +15,7 @@ export default function SkillsSection() {
   const skillsWrapperRef = React.useRef<HTMLDivElement | null>(null);
   const skillsListRef = React.useRef<HTMLDivElement[] | []>([]);
 
+  // GSAP ANIMATION
   useGSAP(
     () => {
       if (skillsListRef.current.length === 0) return;
@@ -25,6 +28,10 @@ export default function SkillsSection() {
     { scope: skillsSectionRef }
   );
 
+  // EASE IN
+  const { ref: titleRef, visible: titleVisible } =
+    useEaseIn<HTMLHeadingElement>();
+
   return (
     <section
       ref={skillsSectionRef}
@@ -33,7 +40,13 @@ export default function SkillsSection() {
     >
       <div className="container flex flex-col items-center gap-11.5 sm:gap-23">
         {/* TITLE */}
-        <h2 className="fontDisplay textLinearWhite uppercase text-center *:block">
+        <h2
+          ref={titleRef}
+          className={clsx(
+            `${transitionEaseIn} fontDisplay textLinearWhite uppercase text-center *:block`,
+            { "opacity-100": titleVisible }
+          )}
+        >
           <span className="title">Eu construo sites</span>
           <span className="title">ao reunir</span>
         </h2>

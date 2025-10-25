@@ -2,6 +2,8 @@
 
 import { socialCopy } from "@/copy/Social";
 import useCloseModal from "@/hooks/useCloseModal";
+import useEaseIn from "@/hooks/useEaseIn";
+import { transitionEaseIn } from "@/types/classes";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +14,7 @@ export default function Footer() {
   const [isOpen, setIsOpen] = React.useState(false);
   const infosRef = React.useRef<HTMLDivElement>(null);
 
+  // TAB NAVIGATION OFF
   React.useEffect(() => {
     if (!infosRef.current) return;
 
@@ -28,10 +31,20 @@ export default function Footer() {
     });
   }, [isOpen]);
 
+  // CLOSE MODAL
   useCloseModal(infosRef, isOpen, () => setIsOpen(false));
 
+  // EASE IN
+  const { ref: footerRef, visible: footerVisible } = useEaseIn<HTMLElement>();
+
   return (
-    <footer id="contact" className="pt-17 pb-6 sm:pt-28">
+    <footer
+      ref={footerRef}
+      id="contact"
+      className={clsx(`${transitionEaseIn} pt-17 pb-6 sm:pt-28`, {
+        "opacity-100": footerVisible,
+      })}
+    >
       <div className="container">
         <div
           className="bg-gray-1 bg-[url('/images/noise-light.jpg')] bg-repeat 

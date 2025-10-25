@@ -1,12 +1,38 @@
+"use client";
+
 import { technologiesCopy } from "@/copy/Technologies";
+import useEaseIn from "@/hooks/useEaseIn";
+import { transitionEaseIn } from "@/types/classes";
 import clsx from "clsx";
 
 export default function TechnologiesSection() {
+  const { ref: titleRef, visible: titleVisible } =
+    useEaseIn<HTMLHeadingElement>();
+  const { ref: ulRef, visible: ulVisible } = useEaseIn<HTMLUListElement>();
+
   return (
     <section className="py-17 sm:py-28">
       <div className="container flex flex-col gap-11.5 sm:gap-23">
-        <h2 className="fontDisplay textLinearWhite uppercase">Tecnologias</h2>
-        <ul>
+        {/* TITLE */}
+        <h2
+          ref={titleRef}
+          className={clsx(
+            `${transitionEaseIn} fontDisplay textLinearWhite uppercase`,
+            {
+              "opacity-100": titleVisible,
+            }
+          )}
+        >
+          Tecnologias
+        </h2>
+
+        {/* LIST */}
+        <ul
+          ref={ulRef}
+          className={clsx(`${transitionEaseIn}`, {
+            "opacity-100": ulVisible,
+          })}
+        >
           {technologiesCopy.map(({ key, title, description }, index) => (
             <li
               key={key}
