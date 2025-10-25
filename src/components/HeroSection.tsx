@@ -6,20 +6,21 @@ import { useGSAP } from "@/lib/gsap";
 import { heroAnimation } from "@/animations/heroAnimation";
 
 export default function HeroSection() {
-  const heroRef = React.useRef<HTMLElement>(null);
-  const titleRef = React.useRef<HTMLHeadingElement>(null);
-  const descRef = React.useRef<HTMLDivElement>(null);
+  const heroRef = React.useRef<HTMLElement | null>(null);
+  const titleRef = React.useRef<HTMLHeadingElement | null>(null);
+  const descriptionRef = React.useRef<HTMLDivElement | null>(null);
 
-  useGSAP();
-  // () => {
-  //   if (!titleRef.current || !descRef.current) return;
+  useGSAP(
+    () => {
+      if (!titleRef.current || !descriptionRef.current) return;
 
-  //   heroAnimation({
-  //     titleElement: titleRef.current,
-  //     descElement: descRef.current,
-  //   });
-  // },
-  // { scope: heroRef }
+      heroAnimation({
+        titleElement: titleRef.current,
+        descriptionElement: descriptionRef.current,
+      });
+    },
+    { scope: heroRef }
+  );
 
   return (
     <section ref={heroRef} className="pt-48.5 sm:pt-25">
@@ -28,8 +29,8 @@ export default function HeroSection() {
         <div className="relative py-9 sm:py-14">
           <h1
             ref={titleRef}
-            className="fontDisplay text-center textLinearHero uppercase mix-blend-difference [&_.word]:whitespace-nowrap 
-            [&_.char]:inline-block "
+            className="fontDisplay text-center uppercase [&_.word]:whitespace-nowrap 
+            [&_.char]:inline-block"
             style={{}}
           >
             Dev Front-End & <br className="hidden sm:block" /> Ui/Ux Designer
@@ -41,10 +42,13 @@ export default function HeroSection() {
         </div>
 
         {/* TEXT */}
-        <div className="flex flex-col items-center gap-6" ref={descRef}>
-          <div className="flex gap-6">
+        <div
+          className="flex flex-col items-center gap-6 clipPathDescription"
+          ref={descriptionRef}
+        >
+          <div className="flex items-center gap-6">
             <Image
-              className="block dark:hidden"
+              className="max-w-24.5 max-h-[43px] block dark:hidden"
               src={"/svg/logo-allan-coding-black.svg"}
               alt="Allan Coding"
               priority

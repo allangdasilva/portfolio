@@ -120,7 +120,7 @@ body {
   }
 
   /* ----- CLIP-PATH-DESCRIPTION ----- */
-  .clipPathDesccription {
+  .clipPathDescription {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
 

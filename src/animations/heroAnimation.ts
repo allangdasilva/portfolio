@@ -3,10 +3,10 @@ import { SplitText } from "@/lib/gsap";
 
 export function heroAnimation({
   titleElement,
-  descElement,
+  descriptionElement,
 }: {
   titleElement: HTMLHeadingElement;
-  descElement: HTMLDivElement;
+  descriptionElement: HTMLDivElement;
 }) {
   const titleSplit = new SplitText(titleElement, {
     type: "chars, words",
@@ -16,7 +16,7 @@ export function heroAnimation({
   });
 
   titleSplit.chars.forEach((char) => {
-    char.classList.add("title_gradient_white", "mix-blend-difference");
+    char.classList.add("textLinearHero", "mix-blend-difference");
   });
 
   const tl = gsap.timeline();
@@ -28,12 +28,12 @@ export function heroAnimation({
     opacity: 0,
     delay: 0.6,
   }).to(
-    descElement,
+    descriptionElement,
     {
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
       duration: 1,
-      ease: "expo.out",
+      ease: "circ.in",
     },
-    "-=0.4"
+    "-=0.6"
   );
 }

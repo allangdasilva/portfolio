@@ -8,8 +8,8 @@ import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
-  const [isOpen, setIsOpen] = React.useState(false);
   const copy = socialCopy;
+  const [isOpen, setIsOpen] = React.useState(false);
   const infosRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -86,7 +86,7 @@ export default function Footer() {
             {/* INFOS/LINKS */}
             <div className="relative flex flex-col place-content-between gap-6 m-3 overflow-hidden lg:m-6 lg:col-start-1 lg:col-end-8">
               {/* LINKS/LOGO */}
-              <div className="flex justify-between">
+              <div className="flex flex-wrap justify-between gap-6">
                 <ul className="flex flex-col gap-2">
                   {copy.map(({ key, name, url }) => (
                     <li key={key}>

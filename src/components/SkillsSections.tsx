@@ -9,47 +9,38 @@ import clsx from "clsx";
 
 export default function SkillsSection() {
   const copy = skillsCopy;
-  const skillsRef = React.useRef<HTMLElement>(null);
-  const titleRef = React.useRef<HTMLHeadingElement>(null);
-  const skillsContentRef = React.useRef<HTMLDivElement>(null);
-  const skillsListRef = React.useRef<HTMLDivElement[]>([]);
+  const skillsSectionRef = React.useRef<HTMLElement | null>(null);
+  const skillsWrapperRef = React.useRef<HTMLDivElement | null>(null);
+  const skillsListRef = React.useRef<HTMLDivElement[] | []>([]);
 
-  // useGSAP(
-  //   () => {
-  //     if (
-  //       !titleRef.current ||
-  //       !skillsContentRef.current ||
-  //       skillsListRef.current.length === 0
-  //     )
-  //       return;
+  useGSAP(
+    () => {
+      if (skillsListRef.current.length === 0) return;
 
-  //     skillsAnimation({
-  //       titleElement: titleRef.current,
-  //       skillsContentElement: skillsContentRef.current,
-  //       skillsListElement: skillsListRef.current,
-  //     });
-  //   },
-  //   { scope: skillsRef }
-  // );
+      skillsAnimation({
+        skillsListElement: skillsListRef.current,
+        skillsWrapperElement: skillsWrapperRef.current,
+      });
+    },
+    { scope: skillsSectionRef }
+  );
+
   return (
     <section
-      ref={skillsRef}
+      ref={skillsSectionRef}
       id="skills"
       className="py-17 overflow-hidden sm:py-28"
     >
       <div className="container flex flex-col items-center gap-11.5 sm:gap-23">
         {/* TITLE */}
-        <h2
-          ref={titleRef}
-          className="fontDisplay textLinearWhite uppercase text-center *:block"
-        >
+        <h2 className="fontDisplay textLinearWhite uppercase text-center *:block">
           <span className="title">Eu construo sites</span>
           <span className="title">ao reunir</span>
         </h2>
 
         {/* SKILLS */}
         <div
-          ref={skillsContentRef}
+          ref={skillsWrapperRef}
           className="grid grid-cols-1 justify-items-center gap-y-9 gap-x-20 sm:grid-cols-2"
         >
           {copy.map(({ key, image, name }, index) => (

@@ -1,31 +1,20 @@
 import gsap from "gsap";
 
 interface SkillsAnimationParams {
-  titleElement: HTMLHeadingElement;
-  skillsContentElement: HTMLDivElement;
-  skillsListElement: HTMLDivElement[];
+  skillsWrapperElement: HTMLDivElement | null;
+  skillsListElement: HTMLDivElement[] | [];
 }
 
 export function skillsAnimation({
-  titleElement,
-  skillsContentElement,
+  skillsWrapperElement,
   skillsListElement,
 }: SkillsAnimationParams) {
-  gsap.from(titleElement, {
-    scrollTrigger: {
-      trigger: titleElement,
-      start: "top 80%",
-      end: "top 40%",
-      scrub: 1.5,
-    },
-    opacity: 0.4,
-  });
-
   gsap.from(skillsListElement, {
     scrollTrigger: {
-      trigger: skillsContentElement,
+      trigger: skillsWrapperElement,
       start: "top 80%",
       end: "top 40%",
+      once: true,
       scrub: 1.5,
     },
     yPercent: 200,
