@@ -3,9 +3,21 @@ import { krisha, dmSans } from "@/fonts/font";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Allan | Desenvolvedor Front-End & UI/UX Designer",
+  title: "Allan Coding | Desenvolvedor Front-End & UI/UX Designer",
   description:
-    "Portfólio Desenvolvedor Front-End & UI/UX Designer, projetado e criado por Allan Silva",
+    "Portfólio Allan Coding. Desenvolvedor Front-End e UI/UX Designer, projetado e criado por Allan Silva",
+  icons: {
+    icon: [
+      {
+        url: "/svg/favicon-light.svg",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/svg/favicon-dark.svg",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

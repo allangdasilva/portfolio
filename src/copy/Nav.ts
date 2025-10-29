@@ -2,7 +2,7 @@ export const navCopy = [
   {
     key: 1,
     id: "works",
-    name: "trabalhos",
+    name: "projetos",
   },
   {
     key: 2,

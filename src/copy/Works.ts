@@ -2,6 +2,10 @@ export const worksCopy = [
   {
     key: 1,
     project: "Dogs",
+    description: {
+      text: "Rede Social",
+      color: "#0d0d0d",
+    },
     logo: {
       src: "/svg/logo-dogs.svg",
       width: 158,
@@ -9,11 +13,15 @@ export const worksCopy = [
       alt: "Logo dogs",
     },
     bgColor: "#FFBB11",
-    url: "",
+    url: "https://projeto-dogs-next.vercel.app/",
   },
   {
     key: 2,
     project: "Bikcraft",
+    description: {
+      text: "Loja de Bicicletas",
+      color: "#0d0d0d",
+    },
     logo: {
       src: "/svg/logo-bikcraft.svg",
       width: 165,
@@ -21,25 +29,33 @@ export const worksCopy = [
       alt: "Logo bikcraft",
     },
     bgColor: "#FFFFFF",
-    url: "",
+    url: "https://allangdasilva.github.io/projeto-bikcraft-2/",
   },
   {
     key: 3,
     project: "Photography",
+    description: {
+      text: "Estúdio de Fotografia",
+      color: "#ffffff",
+    },
     logo: {
-      src: "/svg/logo-photography-studio.svg",
-      width: 662,
-      height: 63,
-      alt: "Logo the photography studio",
+      src: "/svg/logo-photography.svg",
+      width: 111,
+      height: 124,
+      alt: "Logo the photography",
     },
     bgColor:
       "linear-gradient(180deg,rgba(163, 3, 24, 1) 0%, rgba(170, 173, 154, 1) 100%)",
 
-    url: "",
+    url: "https://photography-studio-dlgp.vercel.app/",
   },
   {
     key: 4,
-    project: "Acme",
+    project: "ACME",
+    description: {
+      text: "Painel Financeiro",
+      color: "#ffffff",
+    },
     logo: {
       src: "/svg/logo-acme.svg",
       width: 124,
@@ -47,18 +63,22 @@ export const worksCopy = [
       alt: "Logo acme",
     },
     bgColor: "#0070F3",
-    url: "",
+    url: "https://nextjs-dashboard-nine-woad-32.vercel.app/",
   },
   {
     key: 5,
-    project: "Teste",
+    project: "GOT Game",
+    description: {
+      text: "Jogo da Memória",
+      color: "#0d0d0d",
+    },
     logo: {
-      src: "/svg/logo-acme.svg",
+      src: "/svg/logo-got-game.svg",
       width: 124,
       height: 124,
-      alt: "Logo acme",
+      alt: "Logo got game",
     },
-    bgColor: "#0f0",
-    url: "",
+    bgColor: "#FFF2CE",
+    url: "https://allangdasilva.github.io/projeto-memory-game/",
   },
 ];

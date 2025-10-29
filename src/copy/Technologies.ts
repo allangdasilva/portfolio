@@ -15,7 +15,7 @@ export const technologiesCopy = [
     key: 3,
     title: "Figma & Photoshop",
     description:
-      "Do esboço ao visual final, uso o Figma e o Photoshop para criar interfaces equilibradas, intuitivas e visualmente marcantes. São as ferramentas que me ajudam a transformar ideias em experiências reais, alinhando estética e funcionalidade.",
+      "Figma e o Photoshop são as ferramentas que me ajudam a transformar ideias em interfaces equilibradas, intuitivas e visualmente marcantes.",
   },
   {
     key: 4,
@@ -27,6 +27,6 @@ export const technologiesCopy = [
     key: 5,
     title: "Tailwind CSS",
     description:
-      "Uso o Tailwind para acelerar o desenvolvimento de interfaces modernas, mantendo consistência visual e um código leve e escalável.",
+      "Uso o Tailwind para acelerar o desenvolvimento de interfaces, mantendo consistência visual e um código escalável.",
   },
 ];

@@ -75,50 +75,72 @@ export default function WorksSection() {
           <ul className="flex flex-col gap-6.5 overflow-hidden sm:gap-11.5">
             {copy
               .slice(0, visibleItems)
-              .map(({ key, project, url, logo, bgColor }, index) => (
-                <li
-                  ref={(el) => {
-                    if (el) worksListRef.current[index] = el;
-                  }}
-                  className={clsx(
-                    "flex flex-col justify-center gap-3 sm:gap-6 sm:flex-row sm:items-center",
-                    {
-                      "items-end": index % 2 === 0,
-                      "items-start sm:flex-row-reverse": index % 2 !== 0,
-                    }
-                  )}
-                  key={key}
-                >
-                  {/* WORKS TITLE */}
-                  <div className="w-full max-w-fit">
-                    <h3 className="fontWorksDisplay textLinearWhite uppercase">
-                      {project}
-                    </h3>
-                  </div>
-
-                  {/* WORKS CONTENT */}
-                  <a
-                    className="relative w-full h-75 p-6 flex items-center justify-center bg-gray-2 group"
-                    href={"#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ background: bgColor }}
+              .map(
+                ({ key, project, description, url, logo, bgColor }, index) => (
+                  <li
+                    ref={(el) => {
+                      if (el) worksListRef.current[index] = el;
+                    }}
+                    className={clsx(
+                      "flex flex-col justify-center gap-3 sm:gap-6 sm:flex-row sm:items-center",
+                      {
+                        "items-end": index % 2 === 0,
+                        "items-start sm:flex-row-reverse": index % 2 !== 0,
+                      }
+                    )}
+                    key={key}
                   >
-                    <Image
-                      className={clsx(
-                        "transition-transform duration-400 [cubic-bezier(0.85,0.09,0.15,0.91)] group-hover:scale-105 group-focus-visible:scale-105",
-                        {
-                          "mix-blend-difference": project === "Photography",
-                        }
-                      )}
-                      src={logo.src}
-                      width={logo.width}
-                      height={logo.height}
-                      alt={logo.alt}
-                    />
-                  </a>
-                </li>
-              ))}
+                    {/* WORKS TITLE */}
+                    <div className="w-full max-w-fit">
+                      <h3
+                        className={clsx(
+                          "fontWorksDisplay textLinearWhite uppercas sm:max-w-[12ch]",
+                          {
+                            "text-right sm:text-left": index % 2 === 0,
+                            "sm:text-right": index % 2 !== 0,
+                          }
+                        )}
+                      >
+                        {project}
+                      </h3>
+                    </div>
+
+                    {/* WORKS CONTENT */}
+                    <a
+                      className="relative w-full h-75 p-6 flex items-center justify-center bg-gray-2 group"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ background: bgColor }}
+                    >
+                      <p
+                        style={{ color: `${description.color}` }}
+                        className={clsx(
+                          "absolute top-2 right-3 fontWorksSubDisplay sm:top-5 sm:right-6",
+                          {
+                            "left-3 sm:left-6": index % 2 !== 0,
+                            "mix-blend-difference": key === 3,
+                          }
+                        )}
+                      >
+                        {description.text}
+                      </p>
+                      <Image
+                        className={clsx(
+                          "transition-transform duration-400 [cubic-bezier(0.85,0.09,0.15,0.91)] group-hover:scale-105 group-focus-visible:scale-105",
+                          {
+                            "mix-blend-difference": key === 3,
+                          }
+                        )}
+                        src={logo.src}
+                        width={logo.width}
+                        height={logo.height}
+                        alt={logo.alt}
+                      />
+                    </a>
+                  </li>
+                )
+              )}
             {isLoading && (
               <li
                 aria-hidden="true"

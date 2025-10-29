@@ -117,8 +117,7 @@ export default function Footer() {
                   ))}
                 </ul>
                 <Link
-                  aria-hidden="true"
-                  className="max-w-15 max-h-7 transition-transform duration-400 ease-[cubic-bezier(0.85,0.09,0.15,0.91)] hover:scale-95 focus-visible:scale-95 lg:max-w-none lg:max-h-11"
+                  className="max-w-15 max-h-7 lg:max-w-none lg:max-h-11"
                   href="/"
                 >
                   <Image
@@ -126,14 +125,14 @@ export default function Footer() {
                     src={`/svg/logo-allan-coding-white.svg`}
                     width={99}
                     height={44}
-                    alt=""
+                    alt="Allan Coding"
                   />
                   <Image
                     className="hidden dark:block"
                     src={`/svg/logo-allan-coding-black.svg`}
                     width={99}
                     height={44}
-                    alt=""
+                    alt="Allan Coding"
                   />
                 </Link>
               </div>
@@ -218,8 +217,8 @@ export default function Footer() {
                 <div className="fontCopyInfos text-gray-5">
                   <p className="font-medium mb-1">02-infos</p>
                   <p className="max-w-[45ch]">
-                    Projetado no figma, desenvolvido com Next.JS | Tailwind |
-                    GSAP | Lenis, imagens 3d feitas no blender
+                    Projetado no figma, desenvolvido com Next.JS | Typescript |
+                    Tailwind e GSAP. Imagens 3d criadas no blender.
                   </p>
                 </div>
               </div>
