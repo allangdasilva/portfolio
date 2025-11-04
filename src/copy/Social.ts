@@ -13,8 +13,8 @@ export const socialCopy = [
   },
   {
     key: 3,
-    id: "instagram",
-    name: "Instagram",
-    url: "/",
+    id: "youtube",
+    name: "Youtube",
+    url: "https://www.youtube.com/channel/UCzcRdgkUetDZpXMMsVGZA3Q",
   },
 ];

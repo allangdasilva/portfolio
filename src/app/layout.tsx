@@ -3,9 +3,9 @@ import { krisha, dmSans } from "@/fonts/font";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Allan Coding | Desenvolvedor Front-End & UI/UX Designer",
+  title: "Allan Silva | Desenvolvedor Front-End & UI/UX Designer",
   description:
-    "Portfólio Allan Coding. Desenvolvedor Front-End e UI/UX Designer, projetado e criado por Allan Silva",
+    "Portfólio Allan Silva. Desenvolvedor Front-End e UI/UX Designer, projetado e criado por Allan Silva",
   icons: {
     icon: [
       {

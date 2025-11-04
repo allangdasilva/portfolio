@@ -142,7 +142,7 @@ export default function Footer() {
                 {/* TEXT */}
 
                 <p className="fontCopyInfos text-gray-7">
-                  Allan Coding &copy; 2025
+                  Allan Silva &copy; 2025
                 </p>
 
                 {/* INFOS */}
