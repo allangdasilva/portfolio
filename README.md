@@ -1,8 +1,8 @@
 # 🖥️ Dogs
 
-> Projeto desenvolvido com o objetivo de compartilhar minhas habilidades como **Desenvolvedor Front-end** e **UI/UX Designer**.
+> Projeto desenvolvido com o objetivo de compartilhar minhas habilidades como **Desenvolvedor Front-end** e **UX/UI Designer**.
 
-🔗 **Demo:** [portfolio-allan-silva](https://portfolio.vercel.app/)
+🔗 **Demo:** [portfolio-allan-silva](https://portfolio-allan-silva.vercel.app/)
 
 ---
 
@@ -35,7 +35,7 @@
 
 - Uso do GSAP separado do componente principal
 - Criação e utilização de _custom hooks_
-- Aplicação de conceitos de UI e UX
+- Aplicação de conceitos de UX e UI
 - Layout desenvolvido no Figma
 
 ---
@@ -45,4 +45,4 @@
 **Allan Silva**  
 Desenvolvedor Front-end & UI/UX Designer
 
-<!-- [LinkedIn](#) • [Portfólio](#) -->
+[LinkedIn](https://www.linkedin.com/in/allangdasilva/) • [Portfólio](https://portfolio-allan-silva.vercel.app/)

@@ -9,7 +9,7 @@ export const socialCopy = [
     key: 2,
     id: "linkedin",
     name: "LinkedIn",
-    url: "/",
+    url: "https://www.linkedin.com/in/allangdasilva/",
   },
   {
     key: 3,

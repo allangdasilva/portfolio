@@ -33,7 +33,7 @@ export default function HeroSection() {
             [&_.char]:inline-block"
             style={{}}
           >
-            Dev Front-End & <br className="hidden sm:block" /> Ui/Ux Designer
+            Dev Front-End & <br className="hidden sm:block" /> UX/UI Designer
           </h1>
           <span
             aria-hidden="true"
@@ -70,7 +70,7 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-col gap-2 max-w-[45ch] fontBody text-gray-1 text-center">
-            <p>Olá! Sou Allan, desenvolvedor front-end e UI/UX designer.</p>
+            <p>Olá! Sou Allan, desenvolvedor Front-End e UX/UI designer.</p>
             <p>
               Há cerca de 1 ano venho mergulhando de cabeça nesse universo, se
               você tem um projeto em mente, me chama — vamos realizá-lo juntos!

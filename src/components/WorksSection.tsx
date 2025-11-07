@@ -173,7 +173,12 @@ export default function WorksSection() {
             ver mais
             <span className="linkDecoration"></span>
           </button>
-          <a className="linkBase group" href={``}>
+          <a
+            className="linkBase group"
+            download={"CV-Allan-Silva.pdf"}
+            href={`/docs/curriculo-allan-silva.pdf`}
+            aria-label="Baixar currículo em formato PDF, nome do arquivo CV-Allan-Silva"
+          >
             currículo
             <span className="linkDecoration"></span>
           </a>

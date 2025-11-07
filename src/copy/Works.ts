@@ -47,7 +47,7 @@ export const worksCopy = [
     bgColor:
       "linear-gradient(180deg,rgba(163, 3, 24, 1) 0%, rgba(170, 173, 154, 1) 100%)",
 
-    url: "https://photography-studio-dlgp.vercel.app/",
+    url: "https://the-photography-studio.vercel.app/",
   },
   {
     key: 4,
