@@ -29,4 +29,10 @@ export const technologiesCopy = [
     description:
       "Uso o Tailwind para acelerar o desenvolvimento de interfaces, mantendo consistência visual e um código escalável.",
   },
+  {
+    key: 6,
+    title: "Angular",
+    description:
+      "No momento estou aprendendo Angular, buscando evoluir na construção de projetos mais completos e sólidos.",
+  },
 ];

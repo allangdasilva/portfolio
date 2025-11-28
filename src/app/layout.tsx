@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`
           ${krisha.variable}
           ${dmSans.variable}
-          antialiased`}
+          antialiased scroll-smooth`}
       >
         {children}
       </body>
