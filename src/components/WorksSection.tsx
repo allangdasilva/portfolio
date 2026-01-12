@@ -113,18 +113,21 @@ export default function WorksSection() {
                       rel="noopener noreferrer"
                       style={{ background: bgColor }}
                     >
-                      <p
-                        style={{ color: `${description.color}` }}
-                        className={clsx(
-                          "absolute top-2 right-3 fontWorksSubDisplay sm:top-5 sm:right-6",
-                          {
-                            "left-3 sm:left-6": index % 2 !== 0,
-                            "mix-blend-difference": key === 3,
-                          }
-                        )}
-                      >
-                        {description.text}
-                      </p>
+                      <div className="absolute top-2 right-3">
+                        <p
+                          style={{ color: `${description.color}` }}
+                          className={clsx(
+                            "fontWorksSubDisplay sm:top-5 sm:right-6",
+                            {
+                              "left-3 sm:left-6": index % 2 !== 0,
+                              "mix-blend-difference": key === 3,
+                            }
+                          )}
+                        >
+                          {description.text}
+                        </p>
+                      </div>
+
                       <Image
                         className={clsx(
                           "transition-transform duration-400 [cubic-bezier(0.85,0.09,0.15,0.91)] group-hover:scale-105 group-focus-visible:scale-105",

@@ -13,26 +13,26 @@ export const technologiesCopy = [
   },
   {
     key: 3,
-    title: "Figma & Photoshop",
-    description:
-      "Figma e o Photoshop são as ferramentas que me ajudam a transformar ideias em interfaces equilibradas, intuitivas e visualmente marcantes.",
-  },
-  {
-    key: 4,
     title: "Redux & TypeScript",
     description:
       "Uso Redux e TypeScript para trazer clareza e segurança ao código. Gosto de trabalhar com aplicações organizadas, previsíveis e fáceis de manter, especialmente em projetos de médio e grande porte.",
   },
   {
-    key: 5,
+    key: 4,
     title: "Tailwind CSS",
     description:
       "Uso o Tailwind para acelerar o desenvolvimento de interfaces, mantendo consistência visual e um código escalável.",
   },
   {
-    key: 6,
-    title: "Angular",
+    key: 5,
+    title: "Figma & Photoshop",
     description:
-      "No momento estou aprendendo Angular, buscando evoluir na construção de projetos mais completos e sólidos.",
+      "Figma e o Photoshop são as ferramentas que me ajudam a transformar ideias em interfaces equilibradas, intuitivas e visualmente marcantes.",
+  },
+  {
+    key: 6,
+    title: "Foco",
+    description:
+      "No momento estou focado em aprimorar meus conhecimentos em React.",
   },
 ];
