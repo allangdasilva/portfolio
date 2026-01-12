@@ -16,7 +16,7 @@ export function heroAnimation({
   });
 
   titleSplit.chars.forEach((char) => {
-    char.classList.add("textLinearHero", "mix-blend-difference");
+    char.classList.add("textLinearWhite");
   });
 
   const tl = gsap.timeline();

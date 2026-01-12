@@ -1,3 +1,4 @@
+import FixedBackground from "@/components/FixedBackground";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Loading from "@/components/Loading";
@@ -10,6 +11,8 @@ export default function Home() {
   return (
     <>
       <Loading />
+
+      <FixedBackground />
 
       <header>
         <Nav />

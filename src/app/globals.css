@@ -57,6 +57,25 @@
     --gray-9: #1a1a1a;
     --gray-10: #0d0d0d;
   }
+
+  .fixedGridGradient {
+    @apply absolute inset-0 z-0;
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+  }
+  .fixedRadialGradient {
+    @apply absolute inset-0 z-0;
+    background-image: radial-gradient(
+      circle 500px at 50% 300px,
+      var(--gray-8),
+      transparent
+    );
+  }
 }
 
 body {
@@ -117,6 +136,24 @@ body {
   }
   .textLinearHero {
     @apply bg-linear-to-b from-white to-[#e6e6e6] bg-clip-text text-transparent;
+  }
+  .fixedGridGradient {
+    @apply absolute inset-0 z-0;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.02) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+  }
+  .fixedRadialGradient {
+    @apply absolute inset-0 z-0;
+    background-image: radial-gradient(
+      circle 500px at 50% 300px,
+      var(--gray-10),
+      transparent
+    );
   }
 
   /* ----- CLIP-PATH-DESCRIPTION ----- */

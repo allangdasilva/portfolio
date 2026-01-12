@@ -35,10 +35,10 @@ export default function HeroSection() {
           >
             Dev Front-End & <br className="hidden sm:block" /> UX/UI Designer
           </h1>
-          <span
+          {/* <span
             aria-hidden="true"
             className="absolute inset-0 bg-[url('/images/david-bust-hero.webp')] bg-center bg-contain bg-no-repeat -z-10"
-          ></span>
+          ></span> */}
         </div>
 
         {/* TEXT */}
