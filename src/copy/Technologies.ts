@@ -33,6 +33,6 @@ export const technologiesCopy = [
     key: 6,
     title: "Foco",
     description:
-      "No momento estou focado em aprimorar meus conhecimentos em React.",
+      "No momento estou aprendendo sobre back-end com node.js e aprimorando meus conhecimentos em React.",
   },
 ];
